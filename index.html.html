@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation IA Générative</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #7A6030;
+    --black: #080808;
+    --dark: #111010;
+    --white: #F5F0E8;
+    --grey: #3A3A3A;
+  }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Background texture */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 10% 90%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Grid lines decoration */
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* Top bar */
+  .top-bar {
+    position: relative;
+    z-index: 10;
+    padding: 48px 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .label-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    border: 1px solid var(--gold-dim);
+    padding: 6px 14px;
+  }
+
+  .year-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-dim);
+    letter-spacing: 0.15em;
+  }
+
+  /* Main content */
+  .main {
+    position: relative;
+    z-index: 10;
+    padding: 0 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 112px;
+    line-height: 0.92;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.35s forwards;
+  }
+
+  .headline .accent {
+    color: var(--gold);
+    display: block;
+  }
+
+  .headline .stroke {
+    -webkit-text-stroke: 1.5px var(--white);
+    color: transparent;
+  }
+
+  .subline {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 52px;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+
+  /* Divider */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: expand 0.8s ease 0.6s forwards;
+  }
+
+  /* Modules grid */
+  .modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.75s forwards;
+  }
+
+  .module-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .module-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-dim);
+    min-width: 22px;
+  }
+
+  .module-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(245,240,232,0.55);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  /* Bottom section */
+  .bottom {
+    position: relative;
+    z-index: 10;
+    padding: 0 60px 52px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.9s forwards;
+  }
+
+  .cta-block {}
+
+  .cta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-dim);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .cta-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+
+  .badge {
+    background: var(--gold);
+    color: var(--black);
+    padding: 12px 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Gold vertical line */
+  .v-line {
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+    opacity: 0.3;
+    z-index: 5;
+  }
+
+  /* Large background number */
+  .bg-number {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 500px;
+    color: rgba(201,168,76,0.025);
+    pointer-events: none;
+    line-height: 1;
+    z-index: 1;
+    user-select: none;
+  }
+
+  /* Corner decoration */
+  .corner-tl {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    width: 20px;
+    height: 20px;
+    border-top: 1.5px solid var(--gold-dim);
+    border-left: 1.5px solid var(--gold-dim);
+    z-index: 20;
+  }
+  .corner-tr {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    width: 20px;
+    height: 20px;
+    border-top: 1.5px solid var(--gold-dim);
+    border-right: 1.5px solid var(--gold-dim);
+    z-index: 20;
+  }
+  .corner-bl {
+    position: absolute;
+    bottom: 36px;
+    left: 36px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1.5px solid var(--gold-dim);
+    border-left: 1.5px solid var(--gold-dim);
+    z-index: 20;
+  }
+  .corner-br {
+    position: absolute;
+    bottom: 36px;
+    right: 36px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1.5px solid var(--gold-dim);
+    border-right: 1.5px solid var(--gold-dim);
+    z-index: 20;
+  }
+
+  /* Horizontal gold line */
+  .h-line {
+    position: absolute;
+    bottom: 120px;
+    left: 60px;
+    right: 60px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold-dim), transparent);
+    z-index: 5;
+    opacity: 0.4;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes expand {
+    from { opacity: 0; width: 0; }
+    to { opacity: 1; width: 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-lines"></div>
+  <div class="v-line"></div>
+  <div class="bg-number">IA</div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+  <div class="h-line"></div>
+
+  <div class="top-bar">
+    <div class="label-tag">Formation Complète</div>
+    <div class="year-tag">2025 — 2026</div>
+  </div>
+
+  <div class="main">
+    <div class="eyebrow">Des fondamentaux à la pratique</div>
+
+    <div class="headline">
+      Maîtriser<br>
+      <span class="accent">l'IA</span>
+      <span class="stroke">Générative</span>
+    </div>
+
+    <div class="subline">La révolution est là. Pilotez-la.</div>
+
+    <div class="divider"></div>
+
+    <div class="modules">
+      <div class="module-item">
+        <span class="module-num">01</span>
+        <span class="module-name">Histoire de l'IA</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">02</span>
+        <span class="module-name">Comprendre les LLMs</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">03</span>
+        <span class="module-name">Prompt Engineering</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">04</span>
+        <span class="module-name">Techniques Avancées</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">05</span>
+        <span class="module-name">Génération d'Images</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">06</span>
+        <span class="module-name">Deepfakes & Confiance</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">07</span>
+        <span class="module-name">Assistants Recherche</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">08</span>
+        <span class="module-name">Agents & Automatisation</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">09</span>
+        <span class="module-name">Apps Sans Code</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">10</span>
+        <span class="module-name">Vidéo, Audio, 3D</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">11</span>
+        <span class="module-name">Écosystème Google AI</span>
+      </div>
+      <div class="module-item">
+        <span class="module-num">12</span>
+        <span class="module-name">Éthique & Projets Finaux</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="cta-block">
+      <div class="cta-label">Accès</div>
+      <div class="cta-text">Module Intro — Offert</div>
+    </div>
+    <div class="badge">Formation Live &amp; Présentielle</div>
+  </div>
+</div>
+</body>
+</html>
