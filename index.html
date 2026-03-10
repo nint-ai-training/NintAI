@@ -3,405 +3,1176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formation IA Générative</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Maîtriser l'IA Générative | Master Generative AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dim: #7A6030;
-    --black: #080808;
-    --dark: #111010;
-    --white: #F5F0E8;
-    --grey: #3A3A3A;
+    --bg: #080c14;
+    --bg2: #0d1221;
+    --bg3: #111827;
+    --cyan: #00e5ff;
+    --pink: #ff2d78;
+    --violet: #a855f7;
+    --gold: #f59e0b;
+    --text: #e8eaf0;
+    --muted: #8892a4;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.07);
   }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
 
   body {
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: 'Space Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
 
-  .card {
-    width: 1080px;
-    height: 1080px;
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  /* Background texture */
-  .card::before {
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     inset: 0;
-    background: 
-      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201,168,76,0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 10% 90%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
-  }
-
-  /* Grid lines decoration */
-  .grid-lines {
-    position: absolute;
-    inset: 0;
-    background-image: 
-      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
-
-  /* Top bar */
-  .top-bar {
-    position: relative;
-    z-index: 10;
-    padding: 48px 60px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .label-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--gold);
-    text-transform: uppercase;
-    border: 1px solid var(--gold-dim);
-    padding: 6px 14px;
-  }
-
-  .year-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--gold-dim);
-    letter-spacing: 0.15em;
-  }
-
-  /* Main content */
-  .main {
-    position: relative;
-    z-index: 10;
-    padding: 0 60px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.2s forwards;
-  }
-
-  .headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 112px;
-    line-height: 0.92;
-    color: var(--white);
-    letter-spacing: 0.01em;
-    margin-bottom: 16px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.35s forwards;
-  }
-
-  .headline .accent {
-    color: var(--gold);
-    display: block;
-  }
-
-  .headline .stroke {
-    -webkit-text-stroke: 1.5px var(--white);
-    color: transparent;
-  }
-
-  .subline {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 22px;
-    color: rgba(245,240,232,0.5);
-    margin-bottom: 52px;
-    letter-spacing: 0.02em;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.5s forwards;
-  }
-
-  /* Divider */
-  .divider {
-    width: 80px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 48px;
-    opacity: 0;
-    animation: expand 0.8s ease 0.6s forwards;
-  }
-
-  /* Modules grid */
-  .modules {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.75s forwards;
-  }
-
-  .module-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .module-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--gold-dim);
-    min-width: 22px;
-  }
-
-  .module-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: rgba(245,240,232,0.55);
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-  }
-
-  /* Bottom section */
-  .bottom {
-    position: relative;
-    z-index: 10;
-    padding: 0 60px 52px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.9s forwards;
-  }
-
-  .cta-block {}
-
-  .cta-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--gold-dim);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .cta-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    color: var(--gold-light);
-    letter-spacing: 0.05em;
-  }
-
-  .badge {
-    background: var(--gold);
-    color: var(--black);
-    padding: 12px 24px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  /* Gold vertical line */
-  .v-line {
-    position: absolute;
-    left: 60px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
-    opacity: 0.3;
-    z-index: 5;
-  }
-
-  /* Large background number */
-  .bg-number {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 500px;
-    color: rgba(201,168,76,0.025);
-    pointer-events: none;
-    line-height: 1;
-    z-index: 1;
-    user-select: none;
-  }
-
-  /* Corner decoration */
-  .corner-tl {
-    position: absolute;
-    top: 36px;
-    left: 36px;
-    width: 20px;
-    height: 20px;
-    border-top: 1.5px solid var(--gold-dim);
-    border-left: 1.5px solid var(--gold-dim);
-    z-index: 20;
-  }
-  .corner-tr {
-    position: absolute;
-    top: 36px;
-    right: 36px;
-    width: 20px;
-    height: 20px;
-    border-top: 1.5px solid var(--gold-dim);
-    border-right: 1.5px solid var(--gold-dim);
-    z-index: 20;
-  }
-  .corner-bl {
-    position: absolute;
-    bottom: 36px;
-    left: 36px;
-    width: 20px;
-    height: 20px;
-    border-bottom: 1.5px solid var(--gold-dim);
-    border-left: 1.5px solid var(--gold-dim);
-    z-index: 20;
-  }
-  .corner-br {
-    position: absolute;
-    bottom: 36px;
-    right: 36px;
-    width: 20px;
-    height: 20px;
-    border-bottom: 1.5px solid var(--gold-dim);
-    border-right: 1.5px solid var(--gold-dim);
-    z-index: 20;
-  }
-
-  /* Horizontal gold line */
-  .h-line {
-    position: absolute;
-    bottom: 120px;
-    left: 60px;
-    right: 60px;
-    height: 1px;
-    background: linear-gradient(to right, var(--gold-dim), transparent);
-    z-index: 5;
+    z-index: 0;
     opacity: 0.4;
   }
 
+  /* ── LANG TOGGLE ── */
+  .lang-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 48px;
+    background: rgba(8,12,20,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lang-toggle {
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    padding: 4px;
+  }
+
+  .lang-btn {
+    border: none;
+    background: none;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .lang-btn.active {
+    background: var(--cyan);
+    color: #000;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Orb backgrounds */
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%);
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .orb-pink {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 65%);
+    bottom: -100px; right: -100px;
+    pointer-events: none;
+  }
+
+  .orb-violet {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 65%);
+    bottom: 100px; left: -80px;
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cyan);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    background: rgba(0,229,255,0.05);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 .line-accent {
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.2vw, 20px);
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cyan);
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,229,255,0.25);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── FOR WHO ── */
+  .forwho { background: var(--bg2); }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .profile-card:nth-child(1)::before { background: var(--cyan); }
+  .profile-card:nth-child(2)::before { background: var(--pink); }
+  .profile-card:nth-child(3)::before { background: var(--violet); }
+  .profile-card:nth-child(4)::before { background: var(--gold); }
+  .profile-card:nth-child(5)::before { background: #10b981; }
+
+  .profile-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+  .profile-card:hover::before { opacity: 1; }
+
+  .profile-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .profile-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .profile-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── OUTCOMES ── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 700px) { .outcomes-grid { grid-template-columns: 1fr; } }
+
+  .outcome-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: border-color 0.3s;
+  }
+
+  .outcome-item:hover { border-color: rgba(0,229,255,0.2); }
+
+  .outcome-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    margin-top: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px var(--cyan);
+  }
+
+  .outcome-text { font-size: 15px; line-height: 1.6; }
+
+  /* ── JOURNEY ── */
+  .journey { background: var(--bg2); }
+
+  .weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  @media (max-width: 900px) { .weeks-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  @media (max-width: 500px) { .weeks-grid { grid-template-columns: 1fr; } }
+
+  .week-card {
+    position: relative;
+    padding: 40px 32px 40px;
+    border-top: 2px solid var(--border);
+  }
+
+  .week-card:nth-child(1) { border-top-color: var(--cyan); }
+  .week-card:nth-child(2) { border-top-color: var(--pink); }
+  .week-card:nth-child(3) { border-top-color: var(--violet); }
+  .week-card:nth-child(4) { border-top-color: var(--gold); }
+
+  .week-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border: 2px solid;
+  }
+
+  .week-card:nth-child(1) .week-badge { color: var(--cyan); border-color: var(--cyan); background: rgba(0,229,255,0.08); }
+  .week-card:nth-child(2) .week-badge { color: var(--pink); border-color: var(--pink); background: rgba(255,45,120,0.08); }
+  .week-card:nth-child(3) .week-badge { color: var(--violet); border-color: var(--violet); background: rgba(168,85,247,0.08); }
+  .week-card:nth-child(4) .week-badge { color: var(--gold); border-color: var(--gold); background: rgba(245,158,11,0.08); }
+
+  .week-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .week-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .week-topics {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .week-topics li {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .week-topics li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  /* ── TOOLS ── */
+  .tools-section { background: var(--bg); }
+
+  .tools-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 56px;
+  }
+
+  .tool-chip {
+    padding: 10px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text);
+    transition: all 0.25s;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tool-chip:hover {
+    border-color: rgba(0,229,255,0.4);
+    color: var(--cyan);
+    background: rgba(0,229,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  .tool-chip .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--cyan);
+    opacity: 0.6;
+  }
+
+  /* ── FREE MODULE ── */
+  .free-module {
+    background: var(--bg2);
+  }
+
+  .free-card {
+    background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(168,85,247,0.06) 100%);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 28px;
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 700px) {
+    .free-card { grid-template-columns: 1fr; padding: 40px 32px; }
+  }
+
+  .free-card::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    top: -100px; right: -50px;
+    pointer-events: none;
+  }
+
+  .free-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,255,0.1);
+    border: 1px solid rgba(0,229,255,0.3);
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .free-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .free-desc {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--bg); }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 64px;
+    text-align: center;
+    max-width: 680px;
+    margin: 60px auto 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-desc {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-input {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder { color: var(--muted); }
+  .form-input:focus { border-color: rgba(0,229,255,0.4); }
+
+  textarea.form-input {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes expand {
-    from { opacity: 0; width: 0; }
-    to { opacity: 1; width: 80px; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── LANG VISIBILITY ── */
+  [data-lang="en"] { display: none; }
+  body.lang-en [data-lang="fr"] { display: none; }
+  body.lang-en [data-lang="en"] { display: revert; }
+
+  /* Hide/show specific elements */
+  body.lang-en .lang-btn[data-switch="en"] { background: var(--cyan); color: #000; }
+  body.lang-en .lang-btn[data-switch="fr"] { background: none; color: var(--muted); }
+  body:not(.lang-en) .lang-btn[data-switch="fr"] { background: var(--cyan); color: #000; }
+  body:not(.lang-en) .lang-btn[data-switch="en"] { background: none; color: var(--muted); }
+
+  /* Divider accent line */
+  .accent-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    border-radius: 2px;
+    margin-bottom: 24px;
   }
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="grid-lines"></div>
-  <div class="v-line"></div>
-  <div class="bg-number">IA</div>
-  <div class="corner-tl"></div>
-  <div class="corner-tr"></div>
-  <div class="corner-bl"></div>
-  <div class="corner-br"></div>
-  <div class="h-line"></div>
 
-  <div class="top-bar">
-    <div class="label-tag">Formation Complète</div>
-    <div class="year-tag">2025 — 2026</div>
+<!-- LANG BAR -->
+<nav class="lang-bar">
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-switch="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" data-switch="en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="orb-pink"></div>
+  <div class="orb-violet"></div>
+
+  <div class="hero-badge">
+    <span data-lang="fr">Formation Live · Présentielle</span>
+    <span data-lang="en">Live Training · In-Person</span>
   </div>
 
-  <div class="main">
-    <div class="eyebrow">Des fondamentaux à la pratique</div>
-
-    <div class="headline">
+  <h1>
+    <span data-lang="fr">
       Maîtriser<br>
-      <span class="accent">l'IA</span>
-      <span class="stroke">Générative</span>
+      <span class="line-accent">l'IA Générative</span>
+    </span>
+    <span data-lang="en">
+      Master<br>
+      <span class="line-accent">Generative AI</span>
+    </span>
+  </h1>
+
+  <p class="hero-sub">
+    <span data-lang="fr">Des fondamentaux à la pratique — 15+ outils, 4 semaines, zéro jargon inutile.</span>
+    <span data-lang="en">From fundamentals to hands-on mastery — 15+ tools, 4 weeks, no fluff.</span>
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">
+      <span data-lang="fr">Demander un devis</span>
+      <span data-lang="en">Request a quote</span>
+      ↗
+    </a>
+    <a href="#journey" class="btn-ghost">
+      <span data-lang="fr">Voir le programme</span>
+      <span data-lang="en">View the curriculum</span>
+    </a>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">15+</div>
+      <div class="stat-label" data-lang="fr">Outils IA</div>
+      <div class="stat-label" data-lang="en">AI Tools</div>
     </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label" data-lang="fr">Semaines</div>
+      <div class="stat-label" data-lang="en">Weeks</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-label" data-lang="fr">Pratique</div>
+      <div class="stat-label" data-lang="en">Hands-on</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">0</div>
+      <div class="stat-label" data-lang="fr">Prérequis tech</div>
+      <div class="stat-label" data-lang="en">Tech prerequisites</div>
+    </div>
+  </div>
+</section>
 
-    <div class="subline">La révolution est là. Pilotez-la.</div>
+<!-- ══════════════════════════════════════
+     FOR WHO
+══════════════════════════════════════ -->
+<section class="forwho reveal">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Pour qui ?</div>
+    <div class="section-label" data-lang="en">Who is this for?</div>
+    <div class="accent-line"></div>
 
-    <div class="divider"></div>
+    <h2 class="section-title">
+      <span data-lang="fr">Vous n'avez pas besoin d'être<br>développeur.</span>
+      <span data-lang="en">You don't need to be<br>a developer.</span>
+    </h2>
+    <p class="section-desc">
+      <span data-lang="fr">Cette formation a été conçue pour les professionnels qui veulent exploiter l'IA sans se noyer dans la technique.</span>
+      <span data-lang="en">Built for professionals who want to leverage AI — without drowning in technical complexity.</span>
+    </p>
 
-    <div class="modules">
-      <div class="module-item">
-        <span class="module-num">01</span>
-        <span class="module-name">Histoire de l'IA</span>
+    <div class="profiles-grid">
+      <div class="profile-card reveal">
+        <span class="profile-icon">🏢</span>
+        <div class="profile-title" data-lang="fr">PME & Entrepreneurs</div>
+        <div class="profile-title" data-lang="en">SMBs & Entrepreneurs</div>
+        <p class="profile-desc" data-lang="fr">Automatisez vos process, générez du contenu, accélérez vos idées business.</p>
+        <p class="profile-desc" data-lang="en">Automate workflows, generate content, and fast-track your business ideas.</p>
       </div>
-      <div class="module-item">
-        <span class="module-num">02</span>
-        <span class="module-name">Comprendre les LLMs</span>
+      <div class="profile-card reveal">
+        <span class="profile-icon">🎓</span>
+        <div class="profile-title" data-lang="fr">Éducation</div>
+        <div class="profile-title" data-lang="en">Education</div>
+        <p class="profile-desc" data-lang="fr">Créez des ressources pédagogiques, simplifiez des concepts complexes, personnalisez l'apprentissage.</p>
+        <p class="profile-desc" data-lang="en">Build learning resources, simplify complex concepts, and personalize education at scale.</p>
       </div>
-      <div class="module-item">
-        <span class="module-num">03</span>
-        <span class="module-name">Prompt Engineering</span>
+      <div class="profile-card reveal">
+        <span class="profile-icon">👥</span>
+        <div class="profile-title" data-lang="fr">RH & Management</div>
+        <div class="profile-title" data-lang="en">HR & Management</div>
+        <p class="profile-desc" data-lang="fr">Optimisez le recrutement, la formation interne, et la communication d'équipe grâce à l'IA.</p>
+        <p class="profile-desc" data-lang="en">Streamline recruiting, internal training, and team communication with AI.</p>
       </div>
-      <div class="module-item">
-        <span class="module-num">04</span>
-        <span class="module-name">Techniques Avancées</span>
+      <div class="profile-card reveal">
+        <span class="profile-icon">📊</span>
+        <div class="profile-title" data-lang="fr">Finance & Banque</div>
+        <div class="profile-title" data-lang="en">Finance & Banking</div>
+        <p class="profile-desc" data-lang="fr">Analyse de données, synthèse de rapports, veille automatisée et aide à la décision.</p>
+        <p class="profile-desc" data-lang="en">Data analysis, report synthesis, automated monitoring, and decision support.</p>
       </div>
-      <div class="module-item">
-        <span class="module-num">05</span>
-        <span class="module-name">Génération d'Images</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">06</span>
-        <span class="module-name">Deepfakes & Confiance</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">07</span>
-        <span class="module-name">Assistants Recherche</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">08</span>
-        <span class="module-name">Agents & Automatisation</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">09</span>
-        <span class="module-name">Apps Sans Code</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">10</span>
-        <span class="module-name">Vidéo, Audio, 3D</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">11</span>
-        <span class="module-name">Écosystème Google AI</span>
-      </div>
-      <div class="module-item">
-        <span class="module-num">12</span>
-        <span class="module-name">Éthique & Projets Finaux</span>
+      <div class="profile-card reveal">
+        <span class="profile-icon">📣</span>
+        <div class="profile-title" data-lang="fr">Marketing & Comm</div>
+        <div class="profile-title" data-lang="en">Marketing & Comms</div>
+        <p class="profile-desc" data-lang="fr">Créez du contenu multiformat, des visuels, des vidéos et des campagnes à grande échelle.</p>
+        <p class="profile-desc" data-lang="en">Create multi-format content, visuals, videos, and campaigns at scale.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="bottom">
-    <div class="cta-block">
-      <div class="cta-label">Accès</div>
-      <div class="cta-text">Module Intro — Offert</div>
+<!-- ══════════════════════════════════════
+     OUTCOMES
+══════════════════════════════════════ -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Ce que vous allez maîtriser</div>
+    <div class="section-label" data-lang="en">What you'll master</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">Des compétences concrètes.<br>Pas de la théorie.</span>
+      <span data-lang="en">Real skills.<br>Not just theory.</span>
+    </h2>
+
+    <div class="outcomes-grid">
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Rédiger des prompts efficaces (Zero-shot, Few-shot, Chain-of-thought)</div>
+        <div class="outcome-text" data-lang="en">Write effective prompts — Zero-shot, Few-shot, Chain-of-thought</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Générer des images hyperréalistes et des designs professionnels</div>
+        <div class="outcome-text" data-lang="en">Generate hyperrealistic images and professional designs</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Construire des agents IA autonomes sans écrire une ligne de code</div>
+        <div class="outcome-text" data-lang="en">Build autonomous AI agents without writing a single line of code</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Produire des vidéos, de la musique et des objets 3D avec l'IA</div>
+        <div class="outcome-text" data-lang="en">Produce videos, music, and 3D objects with AI tools</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Transformer une idée en MVP fonctionnel en quelques heures</div>
+        <div class="outcome-text" data-lang="en">Turn an idea into a working MVP in hours, not weeks</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Comprendre les enjeux éthiques et détecter les deepfakes</div>
+        <div class="outcome-text" data-lang="en">Understand ethical stakes and detect deepfakes critically</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Exploiter l'écosystème Google AI (Gemini, NotebookLM, AI Studio)</div>
+        <div class="outcome-text" data-lang="en">Leverage the full Google AI ecosystem — Gemini, NotebookLM, AI Studio</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Utiliser des LLMs open source puissants et gratuits</div>
+        <div class="outcome-text" data-lang="en">Use powerful open-source LLMs freely and confidently</div>
+      </div>
     </div>
-    <div class="badge">Formation Live &amp; Présentielle</div>
   </div>
-</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     JOURNEY / WEEKS
+══════════════════════════════════════ -->
+<section class="journey reveal" id="journey">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Le parcours</div>
+    <div class="section-label" data-lang="en">The journey</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">4 semaines.<br>Une transformation.</span>
+      <span data-lang="en">4 weeks.<br>One transformation.</span>
+    </h2>
+
+    <div class="weeks-grid">
+      <!-- S1 -->
+      <div class="week-card reveal">
+        <div class="week-badge">S1</div>
+        <div class="week-title" data-lang="fr">Introduction & Bases</div>
+        <div class="week-title" data-lang="en">Introduction & Basics</div>
+        <div class="week-subtitle" data-lang="fr">Fondamentaux</div>
+        <div class="week-subtitle" data-lang="en">Fundamentals</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Histoire & évolution de l'IA Générative</li>
+          <li data-lang="en">History & evolution of Generative AI</li>
+          <li data-lang="fr">Comprendre les LLMs</li>
+          <li data-lang="en">Understanding LLMs</li>
+          <li data-lang="fr">Prompt Engineering — les bases</li>
+          <li data-lang="en">Prompt Engineering — the basics</li>
+          <li data-lang="fr">Premiers pas avec l'automatisation</li>
+          <li data-lang="en">First steps with automation</li>
+        </ul>
+      </div>
+      <!-- S2 -->
+      <div class="week-card reveal">
+        <div class="week-badge">S2</div>
+        <div class="week-title" data-lang="fr">Techniques & Médias</div>
+        <div class="week-title" data-lang="en">Techniques & Media</div>
+        <div class="week-subtitle" data-lang="fr">Approfondissement</div>
+        <div class="week-subtitle" data-lang="en">Deep Dive</div>
+        <ul class="week-topics">
+          <li data-lang="fr">CoT, Few-shot, Zero-shot avancé</li>
+          <li data-lang="en">CoT, Few-shot, advanced Zero-shot</li>
+          <li data-lang="fr">Génération d'images (Flux, Midjourney)</li>
+          <li data-lang="en">Image generation (Flux, Midjourney)</li>
+          <li data-lang="fr">Deepfakes — création & détection</li>
+          <li data-lang="en">Deepfakes — creation & detection</li>
+          <li data-lang="fr">Confiance numérique & sécurité</li>
+          <li data-lang="en">Digital trust & security</li>
+        </ul>
+      </div>
+      <!-- S3 -->
+      <div class="week-card reveal">
+        <div class="week-badge">S3</div>
+        <div class="week-title" data-lang="fr">Création & Agents</div>
+        <div class="week-title" data-lang="en">Creation & Agents</div>
+        <div class="week-subtitle" data-lang="fr">Pratique avancée</div>
+        <div class="week-subtitle" data-lang="en">Advanced practice</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Assistants de recherche (NotebookLM)</li>
+          <li data-lang="en">Research assistants (NotebookLM)</li>
+          <li data-lang="fr">Agents IA autonomes (Lindy.ai)</li>
+          <li data-lang="en">Autonomous AI agents (Lindy.ai)</li>
+          <li data-lang="fr">Apps sans code — idée à MVP</li>
+          <li data-lang="en">No-code apps — idea to MVP</li>
+          <li data-lang="fr">Prototypage rapide d'idées business</li>
+          <li data-lang="en">Rapid business idea prototyping</li>
+        </ul>
+      </div>
+      <!-- S4 -->
+      <div class="week-card reveal">
+        <div class="week-badge">S4</div>
+        <div class="week-title" data-lang="fr">Maîtrise & Futur</div>
+        <div class="week-title" data-lang="en">Mastery & Future</div>
+        <div class="week-subtitle" data-lang="fr">Expertise</div>
+        <div class="week-subtitle" data-lang="en">Expertise</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Écosystème Google AI (Gemini, Canvas)</li>
+          <li data-lang="en">Google AI ecosystem (Gemini, Canvas)</li>
+          <li data-lang="fr">LLMs open source & raisonnement</li>
+          <li data-lang="en">Open-source LLMs & reasoning</li>
+          <li data-lang="fr">Contenu nouvelle génération (vidéo, 3D, audio)</li>
+          <li data-lang="en">Next-gen content (video, 3D, audio)</li>
+          <li data-lang="fr">Éthique & IA responsable</li>
+          <li data-lang="en">Ethics & responsible AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TOOLS
+══════════════════════════════════════ -->
+<section class="tools-section reveal">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Les outils que vous allez maîtriser</div>
+    <div class="section-label" data-lang="en">Tools you'll master</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">15+ outils.<br>Tous pratiqués, pas juste cités.</span>
+      <span data-lang="en">15+ tools.<br>All practiced, not just mentioned.</span>
+    </h2>
+
+    <div class="tools-cloud">
+      <div class="tool-chip"><span class="dot"></span>ChatGPT</div>
+      <div class="tool-chip"><span class="dot"></span>Gemini</div>
+      <div class="tool-chip"><span class="dot"></span>Claude AI</div>
+      <div class="tool-chip"><span class="dot"></span>NotebookLM</div>
+      <div class="tool-chip"><span class="dot"></span>Lindy.ai</div>
+      <div class="tool-chip"><span class="dot"></span>Flux / fal.ai</div>
+      <div class="tool-chip"><span class="dot"></span>Midjourney</div>
+      <div class="tool-chip"><span class="dot"></span>Ideogram</div>
+      <div class="tool-chip"><span class="dot"></span>Kling AI</div>
+      <div class="tool-chip"><span class="dot"></span>Suno AI</div>
+      <div class="tool-chip"><span class="dot"></span>ElevenLabs</div>
+      <div class="tool-chip"><span class="dot"></span>Meshy 3D</div>
+      <div class="tool-chip"><span class="dot"></span>v0.dev</div>
+      <div class="tool-chip"><span class="dot"></span>Napkin AI</div>
+      <div class="tool-chip"><span class="dot"></span>Google AI Studio</div>
+      <div class="tool-chip"><span class="dot"></span>Groq</div>
+      <div class="tool-chip"><span class="dot"></span>DeepSeek</div>
+      <div class="tool-chip"><span class="dot"></span>HuggingChat</div>
+      <div class="tool-chip"><span class="dot"></span>Le Chat (Mistral)</div>
+      <div class="tool-chip"><span class="dot"></span>Hedra</div>
+      <div class="tool-chip"><span class="dot"></span>Stitch by Google</div>
+      <div class="tool-chip"><span class="dot"></span>Obsidian + Copilot</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FREE MODULE
+══════════════════════════════════════ -->
+<section class="free-module reveal">
+  <div class="container">
+    <div class="free-card">
+      <div>
+        <div class="free-label">
+          🎁
+          <span data-lang="fr">Module offert</span>
+          <span data-lang="en">Free module</span>
+        </div>
+        <h2 class="free-title">
+          <span data-lang="fr">Découvrez avant de vous engager.</span>
+          <span data-lang="en">Experience it before committing.</span>
+        </h2>
+        <p class="free-desc">
+          <span data-lang="fr">Le module d'introduction est offert. Vous repartez avec vos premiers prompts, votre premier outil maîtrisé — et une idée claire de ce que la formation peut faire pour vous.</span>
+          <span data-lang="en">The introductory module is free. You'll leave with your first prompts, your first mastered tool — and a clear sense of what this training can do for you.</span>
+        </p>
+      </div>
+      <a href="#contact" class="btn-primary" style="white-space: nowrap; flex-shrink: 0;">
+        <span data-lang="fr">Je veux le module gratuit</span>
+        <span data-lang="en">Get the free module</span>
+        →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div style="text-align: center;">
+      <div class="section-label" data-lang="fr">Contact</div>
+      <div class="section-label" data-lang="en">Contact</div>
+      <div class="accent-line" style="margin: 0 auto 0;"></div>
+    </div>
+
+    <div class="contact-card reveal">
+      <h2 class="contact-title">
+        <span data-lang="fr">Intéressé(e) ?<br>Parlons-en.</span>
+        <span data-lang="en">Interested?<br>Let's talk.</span>
+      </h2>
+      <p class="contact-desc">
+        <span data-lang="fr">Formation pour votre équipe, votre entreprise, ou en individuel — répondez et je reviens vers vous sous 24h.</span>
+        <span data-lang="en">Training for your team, your company, or individually — reach out and I'll get back to you within 24h.</span>
+      </p>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)" action="https://formspree.io/f/xbdzgarb" method="POST">
+        <div class="form-row">
+          <input type="text" class="form-input" id="name" placeholder="Nom / Name" required>
+          <input type="email" class="form-input" id="email" placeholder="Email" required>
+        </div>
+        <input type="text" class="form-input" id="org" placeholder="Organisation (optionnel / optional)">
+        <textarea class="form-input" id="message"
+          placeholder="Votre message / Your message — intérêt individuel, équipe, secteur..."></textarea>
+        <button type="submit" class="btn-primary" style="align-self: center; margin-top: 8px;">
+          <span data-lang="fr">Envoyer la demande</span>
+          <span data-lang="en">Send request</span>
+          ↗
+        </button>
+      </form>
+
+      <div id="form-success" style="display:none; margin-top: 24px; color: var(--cyan); font-size: 15px;">
+        <span data-lang="fr">✓ Message envoyé — je vous réponds sous 24h.</span>
+        <span data-lang="en">✓ Message sent — I'll get back to you within 24h.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-brand">Maîtriser l'IA Générative</div>
+  <div style="color: var(--muted); font-size: 13px;">
+    <span data-lang="fr">Formation live · Présentielle · Tous niveaux</span>
+    <span data-lang="en">Live training · In-person · All levels</span>
+  </div>
+  <div>© 2026</div>
+</footer>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit — Formspree
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.style.opacity = '0.5';
+    btn.style.pointerEvents = 'none';
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.opacity = '0.3';
+        form.style.pointerEvents = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+        alert('Une erreur est survenue. Réessayez.');
+      }
+    } catch {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      alert('Erreur réseau. Vérifiez votre connexion.');
+    }
+  }
+</script>
 </body>
 </html>
