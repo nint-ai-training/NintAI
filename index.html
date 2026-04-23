@@ -1,0 +1,4130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Favicon NintAI -->
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIADsAAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAALNJREFUeJylU7ENwjAQPNutUyBZYgDvwRBU7ELNLlQMwR4ZACkShdNGTxFMQt7+N+Iq6/13urf/AAHdbk/SPQAYiZycRzeNAID0fBR7Lavcr4QQKTk/E51Hcr7qxjByxvH83Xm7LOfD6cOz2S5CpCphixApO+IjtIqsHfwDXUBxURdYP6IgIjvY/sTPAg3QBRQXFniv6dBX15qJDL3Jq10k5Ryw+jSyTIhhAuYslIjN0CL9AtHNOloUVT1gAAAAAElFTkSuQmCC">
+  <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABD0lEQVR4nNXXMQ7CMAwF0BZWOjBxLCQuwgGYOQAXQeJYnTqkawUDGLVNnMTfX0J4pMH/KU0rt2n+ubr94ent0bKCw9BDvcx/moeH7a7pptEFqV68Do6ug5DiolJwDlKDUBdIcHjc3j+cLsVwBJK8EIVL1SLu12W/41mFbNbB3/DUdq8a15b0mvdPAmRx9l47EKm+EaCqQESqMAARgQNICB+AgLABtMfQgbDvgPGFxAdoCHAX/GfAicABpPPg2wHCefDfAieCcwYcCN4hBBERoJvGaLxiILS+C0AY+laGBiZCes37S2VnNus8uKjP45ibhooAFGIZTKGxXINYJ2ITIAdBgmGABkHCKcX4QP1pvQBcZoOWJ0a4ywAAAABJRU5ErkJggg==">
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABD0lEQVR4nNXXMQ7CMAwF0BZWOjBxLCQuwgGYOQAXQeJYnTqkawUDGLVNnMTfX0J4pMH/KU0rt2n+ubr94ent0bKCw9BDvcx/moeH7a7pptEFqV68Do6ug5DiolJwDlKDUBdIcHjc3j+cLsVwBJK8EIVL1SLu12W/41mFbNbB3/DUdq8a15b0mvdPAmRx9l47EKm+EaCqQESqMAARgQNICB+AgLABtMfQgbDvgPGFxAdoCHAX/GfAicABpPPg2wHCefDfAieCcwYcCN4hBBERoJvGaLxiILS+C0AY+laGBiZCes37S2VnNus8uKjP45ibhooAFGIZTKGxXINYJ2ITIAdBgmGABkHCKcX4QP1pvQBcZoOWJ0a4ywAAAABJRU5ErkJggg==">
+  <!-- ══ SEO META TAGS ══ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NintAI Training — Formations IA Générative au Maroc | ChatGPT, Gemini, Claude</title>
+  <meta name="description" content="NintAI Training — Cabinet de formation spécialisé en Intelligence Artificielle Générative à Casablanca. Formations IA pour entreprises, RH, écoles et professionnels. ChatGPT, Gemini, Claude, Prompt Engineering.">
+  <meta name="keywords" content="formation IA Maroc, intelligence artificielle Casablanca, ChatGPT formation, prompt engineering, formation RH IA, NintAI Training, IA générative Maroc, formation entreprise IA">
+  <meta name="author" content="Mohamed Amine SBAIH — NintAI Training">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nintai.ma/">
+
+  <!-- ══ OPEN GRAPH (Facebook, LinkedIn, WhatsApp) ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nintai.ma/">
+  <meta property="og:title" content="NintAI Training — Formations IA Générative au Maroc">
+  <meta property="og:description" content="Maîtrisez l'IA Générative avec NintAI Training. Formations sur mesure pour entreprises, RH, écoles et professionnels à Casablanca et en distanciel.">
+  <meta property="og:image" content="https://nintai.ma/og-image.png">
+  <meta property="og:locale" content="fr_MA">
+  <meta property="og:site_name" content="NintAI Training">
+
+  <!-- ══ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nintai.ma/">
+  <meta name="twitter:title" content="NintAI Training — Formations IA Générative au Maroc">
+  <meta name="twitter:description" content="Maîtrisez l'IA Générative avec NintAI Training. Formations sur mesure pour entreprises, RH, écoles et professionnels.">
+  <meta name="twitter:image" content="https://nintai.ma/og-image.png">
+
+  <!-- ══ SCHEMA.ORG JSON-LD ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "NintAI Training",
+    "url": "https://nintai.ma",
+    "logo": "https://nintai.ma/og-image.png",
+    "description": "Cabinet de formation spécialisé en Intelligence Artificielle Générative à Casablanca, Maroc.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Casablanca",
+      "addressCountry": "MA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+212698841448",
+      "contactType": "customer service",
+      "email": "mohamedsbaih@gmail.com"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Mohamed Amine SBAIH"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/nintai-training"
+    ]
+  }
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maîtriser l'IA Générative | Master Generative AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1221;
+    --bg3: #111827;
+    --cyan: #00e5ff;
+    --pink: #ff2d78;
+    --violet: #a855f7;
+    --gold: #f59e0b;
+    --text: #e8eaf0;
+    --muted: #8892a4;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.07);
+    --nav-bg: rgba(8,12,20,0.92);
+    --nav-text: #e8eaf0;
+    --accent: #00e5ff;
+  }
+
+  /* ── LIGHT MODE ── */
+  body.light-mode {
+    --bg: #f8f9ff;
+    --bg2: #f0f2fc;
+    --bg3: #e8ebf8;
+    --cyan: #2F48A5;
+    --pink: #e8562a;
+    --violet: #7c3aed;
+    --gold: #d97706;
+    --text: #0d1221;
+    --muted: #4b5563;
+    --card: rgba(255,255,255,0.9);
+    --border: rgba(47,72,165,0.15);
+    --nav-bg: rgba(248,249,255,0.95);
+    --nav-text: #0d1221;
+    --accent: #2F48A5;
+  }
+
+  body.light-mode { background: var(--bg); color: var(--text); }
+
+  body.light-mode .lang-bar {
+    background: var(--nav-bg);
+    border-bottom: 1px solid rgba(47,72,165,0.1);
+  }
+
+  body.light-mode .nav-brand { color: var(--text); }
+  body.light-mode .nav-brand span { color: var(--cyan); }
+  body.light-mode .nav-link { color: var(--muted); }
+  body.light-mode .nav-link:hover { color: var(--cyan); }
+
+  body.light-mode .nav-cta {
+    background: var(--cyan);
+    color: #fff;
+  }
+
+  body.light-mode .lang-toggle {
+    background: rgba(47,72,165,0.08);
+  }
+
+  body.light-mode .lang-btn { color: var(--muted); }
+  body.light-mode .lang-btn.active {
+    background: var(--cyan);
+    color: #fff;
+  }
+
+  body.light-mode .hero {
+    background: linear-gradient(135deg, #f8f9ff 0%, #eef1fa 50%, #f0f2fc 100%);
+  }
+
+  body.light-mode .orb-pink {
+    background: radial-gradient(circle, rgba(232,86,42,0.12) 0%, transparent 70%);
+  }
+  body.light-mode .orb-violet {
+    background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%);
+  }
+
+  body.light-mode .hero-badge {
+    background: rgba(47,72,165,0.08);
+    border-color: rgba(47,72,165,0.2);
+    color: var(--cyan);
+  }
+
+  body.light-mode .hero-title { color: var(--text); }
+  body.light-mode .line-accent {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, #2F48A5, #e8562a);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  body.light-mode .hero-sub { color: var(--muted); }
+
+  body.light-mode .btn-primary {
+    background: linear-gradient(135deg, #2F48A5, #e8562a);
+    color: #fff;
+  }
+  body.light-mode .btn-ghost {
+    border-color: rgba(47,72,165,0.3);
+    color: var(--text);
+  }
+  body.light-mode .btn-ghost:hover {
+    background: rgba(47,72,165,0.06);
+  }
+
+  body.light-mode .stats-bar {
+    background: rgba(255,255,255,0.8);
+    border-color: rgba(47,72,165,0.12);
+    box-shadow: 0 4px 24px rgba(47,72,165,0.08);
+  }
+  body.light-mode .stat-number { color: #2F48A5; }
+  body.light-mode .stat-label { color: var(--muted); }
+  body.light-mode .stat-item + .stat-item { border-color: rgba(47,72,165,0.12); }
+
+  body.light-mode section { background: var(--bg); }
+  body.light-mode .section-label { color: var(--cyan); }
+  body.light-mode .accent-line { background: linear-gradient(90deg, #2F48A5, #e8562a); }
+  body.light-mode .section-title { color: var(--text); }
+  body.light-mode .section-desc { color: var(--muted); }
+
+  body.light-mode .card,
+  body.light-mode .module-card,
+  body.light-mode .tool-card,
+  body.light-mode .format-card,
+  body.light-mode .contact-card {
+    background: #ffffff;
+    border-color: rgba(47,72,165,0.12);
+    box-shadow: 0 4px 20px rgba(47,72,165,0.08);
+  }
+
+  body.light-mode .card:hover,
+  body.light-mode .module-card:hover,
+  body.light-mode .tool-card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 8px 32px rgba(47,72,165,0.15);
+  }
+
+  body.light-mode .quiz-card {
+    background: #ffffff;
+    border-color: rgba(47,72,165,0.2);
+    box-shadow: 0 8px 40px rgba(47,72,165,0.1);
+  }
+
+  body.light-mode .quiz-type-card {
+    background: #f8f9ff;
+    border-color: rgba(47,72,165,0.15);
+  }
+  body.light-mode .quiz-type-card:hover,
+  body.light-mode .quiz-type-card.selected {
+    border-color: var(--cyan);
+    background: rgba(47,72,165,0.06);
+  }
+  body.light-mode .quiz-type-name { color: var(--text); }
+  body.light-mode .quiz-type-sub { color: var(--muted); }
+  body.light-mode .quiz-step-title { color: var(--text); }
+  body.light-mode .quiz-step-desc { color: var(--muted); }
+  body.light-mode .quiz-label { color: var(--muted); }
+
+  body.light-mode .quiz-input,
+  body.light-mode .quiz-select,
+  body.light-mode .quiz-textarea {
+    background: #f8f9ff;
+    border-color: rgba(47,72,165,0.2);
+    color: var(--text);
+  }
+  body.light-mode .quiz-input:focus,
+  body.light-mode .quiz-select:focus,
+  body.light-mode .quiz-textarea:focus {
+    border-color: var(--cyan);
+    background: #fff;
+  }
+  body.light-mode .quiz-select option { background: #fff; color: #0d1221; }
+
+  body.light-mode .quiz-option {
+    background: #f8f9ff;
+    border-color: rgba(47,72,165,0.12);
+    color: var(--muted);
+  }
+  body.light-mode .quiz-option:hover,
+  body.light-mode .quiz-option.selected {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: rgba(47,72,165,0.06);
+  }
+
+  body.light-mode .quiz-btn-prev {
+    border-color: rgba(47,72,165,0.2);
+    color: var(--muted);
+  }
+  body.light-mode .quiz-btn-prev:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+  body.light-mode .quiz-btn-next {
+    background: linear-gradient(135deg, #2F48A5, #7c3aed);
+  }
+
+  body.light-mode .quiz-progress-bar {
+    background: rgba(47,72,165,0.1);
+  }
+
+  body.light-mode .diagnostic-section {
+    background: var(--bg2);
+  }
+
+  body.light-mode .contact-section { background: var(--bg2); }
+  body.light-mode .contact-title { color: var(--text); }
+  body.light-mode .contact-desc { color: var(--muted); }
+
+  body.light-mode input,
+  body.light-mode select,
+  body.light-mode textarea {
+    background: #f8f9ff;
+    border-color: rgba(47,72,165,0.2);
+    color: var(--text);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover {
+    border-color: var(--cyan);
+    background: rgba(47,72,165,0.1);
+    transform: rotate(20deg);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAVBAR ── */
+  .lang-bar {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 100000 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 48px;
+    background: rgba(8,12,20,0.88);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-brand span { color: var(--cyan); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link:hover { color: var(--text); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cyan);
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover { background: #fff; }
+
+  .lang-toggle {
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    padding: 4px;
+  }
+
+  .lang-btn {
+    border: none;
+    background: none;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .lang-btn.active {
+    background: var(--cyan);
+    color: #000;
+  }
+
+  /* Hide nav links on mobile */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .lang-bar { padding: 14px 20px; }
+  }
+
+  /* Geek Junior responsive */
+  @media (max-width: 750px) {
+    #geekjunior .hm-grid { grid-template-columns: 1fr !important; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Orb backgrounds */
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%);
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .orb-pink {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 65%);
+    bottom: -100px; right: -100px;
+    pointer-events: none;
+  }
+
+  .orb-violet {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 65%);
+    bottom: 100px; left: -80px;
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cyan);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    background: rgba(0,229,255,0.05);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 .line-accent {
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.2vw, 20px);
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cyan);
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,229,255,0.25);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    padding-top: 48px;
+    animation: fadeUp 0.8s 0.4s ease both;
+    width: 100%;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 40px;
+    border-right: 1px solid var(--border);
+    min-width: 120px;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--cyan);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    letter-spacing: -1px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 100px 24px;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── FOR WHO ── */
+  .forwho { background: var(--bg2); }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .profile-card:nth-child(1)::before { background: var(--cyan); }
+  .profile-card:nth-child(2)::before { background: var(--pink); }
+  .profile-card:nth-child(3)::before { background: var(--violet); }
+  .profile-card:nth-child(4)::before { background: var(--gold); }
+  .profile-card:nth-child(5)::before { background: #10b981; }
+
+  .profile-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+  .profile-card:hover::before { opacity: 1; }
+
+  .profile-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .profile-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .profile-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── OUTCOMES ── */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  @media (max-width: 700px) { .outcomes-grid { grid-template-columns: 1fr; } }
+
+  .outcome-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: border-color 0.3s;
+  }
+
+  .outcome-item:hover { border-color: rgba(0,229,255,0.2); }
+
+  .outcome-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    margin-top: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px var(--cyan);
+  }
+
+  .outcome-text { font-size: 15px; line-height: 1.6; }
+
+  /* ── JOURNEY ── */
+  .journey { background: var(--bg2); }
+
+  .weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  @media (max-width: 900px) { .weeks-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  @media (max-width: 500px) { .weeks-grid { grid-template-columns: 1fr; } }
+
+  .week-card {
+    position: relative;
+    padding: 40px 32px 40px;
+    border-top: 2px solid var(--border);
+  }
+
+  .week-card:nth-child(1) { border-top-color: var(--cyan); }
+  .week-card:nth-child(2) { border-top-color: var(--pink); }
+  .week-card:nth-child(3) { border-top-color: var(--violet); }
+  .week-card:nth-child(4) { border-top-color: var(--gold); }
+
+  .week-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border: 2px solid;
+  }
+
+  .week-card:nth-child(1) .week-badge { color: var(--cyan); border-color: var(--cyan); background: rgba(0,229,255,0.08); }
+  .week-card:nth-child(2) .week-badge { color: var(--pink); border-color: var(--pink); background: rgba(255,45,120,0.08); }
+  .week-card:nth-child(3) .week-badge { color: var(--violet); border-color: var(--violet); background: rgba(168,85,247,0.08); }
+  .week-card:nth-child(4) .week-badge { color: var(--gold); border-color: var(--gold); background: rgba(245,158,11,0.08); }
+
+  .week-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .week-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .week-topics {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .week-topics li {
+    font-size: 13.5px;
+    color: var(--muted);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .week-topics li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  /* ── TOOLS ── */
+  .tools-section { background: var(--bg); }
+
+  .tools-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 56px;
+  }
+
+  .tool-chip {
+    padding: 10px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text);
+    transition: all 0.25s;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tool-chip:hover {
+    border-color: rgba(0,229,255,0.4);
+    color: var(--cyan);
+    background: rgba(0,229,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  .tool-chip .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--cyan);
+    opacity: 0.6;
+  }
+
+  /* ── FREE MODULE ── */
+  .free-module {
+    background: var(--bg2);
+  }
+
+  .free-card {
+    background: linear-gradient(135deg, rgba(0,229,255,0.06) 0%, rgba(168,85,247,0.06) 100%);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 28px;
+    padding: 64px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 700px) {
+    .free-card { grid-template-columns: 1fr; padding: 40px 32px; }
+  }
+
+  .free-card::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+    top: -100px; right: -50px;
+    pointer-events: none;
+  }
+
+  .free-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,255,0.1);
+    border: 1px solid rgba(0,229,255,0.3);
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .free-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .free-desc {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--bg); }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 64px;
+    text-align: center;
+    max-width: 680px;
+    margin: 60px auto 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-desc {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-input {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder { color: var(--muted); }
+  .form-input:focus { border-color: rgba(0,229,255,0.4); }
+
+  textarea.form-input {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── LANG VISIBILITY ── */
+  [data-lang="en"] { display: none; }
+  body.lang-en [data-lang="fr"] { display: none; }
+  body.lang-en [data-lang="en"] { display: revert; }
+
+  /* Hide/show specific elements */
+  body.lang-en .lang-btn[data-switch="en"] { background: var(--cyan); color: #000; }
+  body.lang-en .lang-btn[data-switch="fr"] { background: none; color: var(--muted); }
+  body:not(.lang-en) .lang-btn[data-switch="fr"] { background: var(--cyan); color: #000; }
+  body:not(.lang-en) .lang-btn[data-switch="en"] { background: none; color: var(--muted); }
+
+  /* Divider accent line */
+  .accent-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  /* ═══════════════ DIAGNOSTIC SECTION ═══════════════ */
+  .diagnostic-section {
+    background: var(--bg2);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .diagnostic-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .quiz-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .quiz-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 24px;
+    padding: 48px;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+  .quiz-progress-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 99px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .quiz-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00e5ff, #ff2d78);
+    border-radius: 99px;
+    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .quiz-step { display: none; animation: fadeInUp 0.4s ease; }
+  .quiz-step.active { display: block; }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .quiz-step-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #00e5ff;
+    margin-bottom: 12px;
+  }
+  .quiz-step-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #e8eaf0;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .quiz-step-desc {
+    font-size: 14px;
+    color: #8892a4;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .quiz-type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .quiz-type-card {
+    background: rgba(255,255,255,0.03);
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .quiz-type-card:hover {
+    border-color: #00e5ff;
+    background: rgba(0,229,255,0.06);
+    transform: translateY(-2px);
+  }
+  .quiz-type-card.selected {
+    border-color: #00e5ff;
+    background: rgba(0,229,255,0.08);
+  }
+  .quiz-type-icon { font-size: 36px; margin-bottom: 12px; }
+  .quiz-type-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e8eaf0;
+    margin-bottom: 6px;
+  }
+  .quiz-type-sub { font-size: 12px; color: #8892a4; line-height: 1.4; }
+  .quiz-field {
+    margin-bottom: 20px;
+  }
+  .quiz-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #8892a4;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .quiz-input, .quiz-select, .quiz-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #e8eaf0;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .quiz-input:focus, .quiz-select:focus, .quiz-textarea:focus {
+    border-color: #00e5ff;
+    background: rgba(0,229,255,0.04);
+  }
+  .quiz-select option { background: #0d1221; color: #e8eaf0; }
+  .quiz-textarea { resize: vertical; min-height: 100px; }
+  .quiz-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .quiz-option {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    color: #8892a4;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .quiz-option:hover { border-color: #00e5ff; color: #e8eaf0; background: rgba(0,229,255,0.04); }
+  .quiz-option.selected { border-color: #00e5ff; color: #00e5ff; background: rgba(0,229,255,0.08); }
+  .quiz-option-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .quiz-option.selected .quiz-option-dot { background: #00e5ff; }
+  .quiz-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 36px;
+    gap: 12px;
+  }
+  .quiz-btn-prev {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 14px 28px;
+    color: #8892a4;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .quiz-btn-prev:hover { border-color: #00e5ff; color: #00e5ff; }
+  .quiz-btn-next {
+    background: linear-gradient(135deg, #00e5ff, #a855f7);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 36px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    flex: 1;
+  }
+  .quiz-btn-next:hover { opacity: 0.9; transform: translateY(-1px); }
+  .quiz-btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .quiz-step-counter {
+    font-size: 12px;
+    color: #8892a4;
+    letter-spacing: 1px;
+  }
+  /* Success screen */
+  .quiz-success {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .quiz-success-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .quiz-success-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #e8eaf0;
+    margin-bottom: 12px;
+  }
+  .quiz-success-desc {
+    font-size: 15px;
+    color: #8892a4;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .quiz-success-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .quiz-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .quiz-wa-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+  .quiz-loading {
+    text-align: center;
+    padding: 40px;
+    color: #8892a4;
+    font-size: 15px;
+  }
+  .quiz-spinner {
+    width: 40px; height: 40px;
+    border: 3px solid rgba(0,229,255,0.2);
+    border-top-color: #00e5ff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 600px) {
+    .quiz-card { padding: 28px 20px; }
+    .quiz-type-grid { grid-template-columns: 1fr; }
+    .quiz-options-grid { grid-template-columns: 1fr; }
+    .quiz-step-title { font-size: 20px; }
+  }
+
+
+  /* ── GEEK JUNIOR LIGHT MODE FIXES ── */
+  body.light-mode #geekjunior h2,
+  body.light-mode #geekjunior [style*="color: #e8eaf0"],
+  body.light-mode #geekjunior [style*="color:#e8eaf0"] {
+    color: #0d1221 !important;
+  }
+
+  body.light-mode #geekjunior [style*="color: #8892a4"],
+  body.light-mode #geekjunior [style*="color:#8892a4"] {
+    color: #4b5563 !important;
+  }
+
+  body.light-mode #geekjunior > div > div:last-child > div {
+    background: rgba(245,158,11,0.06) !important;
+    border-color: rgba(245,158,11,0.25) !important;
+  }
+
+  body.light-mode #geekjunior .hm-level-item {
+    background: rgba(255,255,255,0.9) !important;
+    border-color: rgba(245,158,11,0.2) !important;
+  }
+
+  body.light-mode #geekjunior .hm-level-title {
+    color: #0d1221 !important;
+  }
+
+  body.light-mode #geekjunior .hm-level-desc {
+    color: #4b5563 !important;
+  }
+
+  body.light-mode #geekjunior .hm-xp-card {
+    background: rgba(255,255,255,0.95) !important;
+    border-color: rgba(245,158,11,0.2) !important;
+  }
+
+  body.light-mode #geekjunior .hm-skills-card {
+    background: rgba(255,255,255,0.9) !important;
+    border-color: rgba(245,158,11,0.15) !important;
+  }
+
+  body.light-mode #geekjunior .hm-skill-item {
+    color: #374151 !important;
+  }
+
+  body.light-mode #geekjunior .hm-badge {
+    background: rgba(245,158,11,0.12) !important;
+    color: #92400e !important;
+    border-color: rgba(245,158,11,0.3) !important;
+  }
+
+  body.light-mode #geekjunior .hm-cta {
+    box-shadow: 0 8px 32px rgba(245,158,11,0.3) !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     MOBILE RESPONSIVE — COMPLET
+  ══════════════════════════════════════════════ */
+
+  @media (max-width: 768px) {
+
+    /* NAV */
+    .lang-bar { padding: 12px 16px; }
+    .nav-brand { font-size: 18px; }
+    .nav-cta span { display: none; }
+    .nav-cta { padding: 8px 12px; font-size: 12px; }
+    .nav-cta::after { content: 'Devis'; }
+    .theme-toggle { width: 30px; height: 30px; font-size: 14px; }
+
+    /* HERO */
+    .hero { padding: 100px 20px 60px; }
+    .hero-title { font-size: clamp(28px, 8vw, 44px) !important; }
+    .hero-sub { font-size: 15px !important; padding: 0 8px; }
+    .hero-ctas { flex-direction: column; gap: 12px; width: 100%; }
+    .hero-ctas .btn-primary,
+    .hero-ctas .btn-ghost { width: 100%; justify-content: center; }
+    .hero-badge { font-size: 11px; padding: 6px 14px; }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding-top: 32px !important;
+      margin-top: 48px !important;
+    }
+    .stat-item {
+      padding: 16px 12px !important;
+      border-right: 1px solid var(--border) !important;
+      border-bottom: 1px solid var(--border) !important;
+    }
+    .stat-item:nth-child(2n) { border-right: none !important; }
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) { border-bottom: none !important; }
+    .stat-number { font-size: 28px !important; }
+
+    /* SECTIONS */
+    section { padding: 60px 0 !important; }
+    .container { padding: 0 16px !important; }
+    .section-title { font-size: clamp(22px, 6vw, 36px) !important; }
+    .section-desc { font-size: 14px !important; }
+
+    /* GRIDS → 1 colonne */
+    .outcomes-grid { grid-template-columns: 1fr !important; }
+    .weeks-grid { grid-template-columns: 1fr !important; }
+    .tools-grid { grid-template-columns: 1fr 1fr !important; }
+    .formats-grid { grid-template-columns: 1fr !important; }
+    .form-row { grid-template-columns: 1fr !important; }
+
+    /* CARDS */
+    .week-card { padding: 28px 20px !important; }
+    .outcome-item { padding: 20px !important; }
+
+    /* FREE CARD */
+    .free-card { 
+      grid-template-columns: 1fr !important; 
+      padding: 32px 20px !important; 
+      gap: 32px !important;
+    }
+
+    /* GEEK JUNIOR */
+    #geekjunior .hm-grid { 
+      grid-template-columns: 1fr !important; 
+      padding: 24px !important;
+      gap: 24px !important;
+    }
+    #geekjunior h2 { font-size: clamp(24px, 7vw, 40px) !important; }
+
+    /* QUIZ */
+    .quiz-wrapper { padding: 0 12px; }
+    .quiz-card { padding: 24px 16px !important; }
+    .quiz-type-grid { grid-template-columns: 1fr !important; }
+    .quiz-options-grid { grid-template-columns: 1fr !important; }
+    .quiz-step-title { font-size: 20px !important; }
+    .quiz-nav { flex-wrap: wrap; gap: 8px; }
+    .quiz-btn-next { order: -1; width: 100%; }
+    .quiz-btn-prev { width: 100%; }
+    .quiz-step-counter { width: 100%; text-align: center; order: 1; }
+    .quiz-success-actions { flex-direction: column; }
+    .quiz-wa-btn { justify-content: center; }
+
+    /* CONTACT FORM */
+    .contact-card { padding: 32px 20px !important; }
+    .contact-form { gap: 12px !important; }
+
+    /* FOOTER */
+    footer { padding: 40px 16px !important; }
+  }
+
+  @media (max-width: 480px) {
+
+    /* HERO encore plus petit */
+    .hero { padding: 90px 16px 48px; }
+    .hero-title { font-size: clamp(24px, 9vw, 36px) !important; }
+
+    /* STATS 1 colonne */
+    .stats-bar { grid-template-columns: 1fr 1fr !important; }
+    .stat-number { font-size: 24px !important; }
+    .stat-label { font-size: 10px !important; }
+
+    /* TOOLS 1 colonne */
+    .tools-grid { grid-template-columns: 1fr !important; }
+
+    /* NAV brand */
+    .nav-brand { font-size: 16px; }
+
+    /* QUIZ type cards */
+    .quiz-type-card { padding: 20px 12px !important; }
+    .quiz-type-icon { font-size: 28px !important; }
+
+    /* Sections padding */
+    section { padding: 48px 0 !important; }
+  }
+
+
+  
+
+
+  /* ══ CHATBOT ══ */
+  .chat-widget {
+    position: fixed !important;
+    bottom: 28px !important;
+    right: 28px !important;
+    z-index: 99999 !important;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .chat-toggle {
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(135deg, #2F48A5, #a855f7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+    box-shadow: 0 4px 20px rgba(47,72,165,0.4);
+    transition: all 0.3s ease;
+    border: none;
+    animation: chatPulse 3s ease-in-out infinite;
+    position: relative;
+    pointer-events: all !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(47,72,165,0.55);
+    animation: none;
+  }
+
+  .chat-toggle svg { width: 26px; height: 26px; fill: white; }
+  .chat-toggle .chat-close { display: none; }
+  .chat-toggle.open .chat-icon { display: none; }
+  .chat-toggle.open .chat-close { display: block; }
+  .chat-toggle.open { animation: none; }
+
+  .chat-notif {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    background: #ff2d78;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+  }
+
+  @keyframes chatPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(47,72,165,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(47,72,165,0); }
+    100% { box-shadow: 0 0 0 0 rgba(47,72,165,0); }
+  }
+
+  .chat-box {
+    width: 340px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    max-height: 520px;
+    border: 1px solid rgba(47,72,165,0.15);
+    animation: chatSlideUp 0.3s ease;
+  }
+
+  .chat-box.open { display: flex !important; }
+
+  @keyframes chatSlideUp {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .chat-header {
+    background: linear-gradient(135deg, #2F48A5, #a855f7);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .chat-avatar {
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .chat-header-info { flex: 1; }
+
+  .chat-header-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chat-header-status {
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chat-header-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8f9ff;
+    scroll-behavior: smooth;
+  }
+
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-track { background: transparent; }
+  .chat-messages::-webkit-scrollbar-thumb { background: rgba(47,72,165,0.2); border-radius: 99px; }
+
+  .chat-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    animation: msgIn 0.25s ease;
+  }
+
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .chat-msg.bot { align-self: flex-start; }
+  .chat-msg.user { align-self: flex-end; }
+
+  .chat-bubble {
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chat-msg.bot .chat-bubble {
+    background: white;
+    color: #1a1a2e;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .chat-msg.user .chat-bubble {
+    background: linear-gradient(135deg, #2F48A5, #a855f7);
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+
+  .chat-time {
+    font-size: 10px;
+    color: #9ca3af;
+    margin-top: 3px;
+    padding: 0 4px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .chat-msg.user .chat-time { text-align: right; }
+
+  .chat-suggestions {
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: #f8f9ff;
+    border-top: 1px solid rgba(47,72,165,0.08);
+    flex-shrink: 0;
+  }
+
+  .chat-sugg {
+    background: white;
+    border: 1px solid rgba(47,72,165,0.2);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    color: #2F48A5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+  }
+
+  .chat-sugg:hover {
+    background: #2F48A5;
+    color: white;
+    border-color: #2F48A5;
+  }
+
+  .chat-input-area {
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: white;
+    border-top: 1px solid rgba(47,72,165,0.1);
+    flex-shrink: 0;
+  }
+
+  .chat-input {
+    flex: 1;
+    background: #f8f9ff;
+    border: 1px solid rgba(47,72,165,0.15);
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a2e;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .chat-input:focus { border-color: #2F48A5; }
+  .chat-input::placeholder { color: #9ca3af; }
+
+  .chat-send {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #2F48A5, #a855f7);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .chat-send:hover { transform: scale(1.1); opacity: 0.9; }
+  .chat-send svg { width: 16px; height: 16px; fill: white; }
+
+  .chat-typing {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 14px;
+    background: white;
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    width: fit-content;
+  }
+
+  .chat-typing span {
+    width: 7px;
+    height: 7px;
+    background: #9ca3af;
+    border-radius: 50%;
+    animation: typingDot 1.2s ease-in-out infinite;
+  }
+
+  .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingDot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  @media (max-width: 480px) {
+    .chat-widget { bottom: 16px; right: 12px; }
+    .chat-box { width: calc(100vw - 24px); }
+    .chat-toggle { width: 52px; height: 52px; }
+  }
+
+  /* Light mode */
+  body.light-mode .chat-box { background: #fff; }
+  body.light-mode .chat-messages { background: #f8f9ff; }
+
+
+  /* ══ AIKO POPUP BUBBLE ══ */
+  .aiko-popup {
+    position: fixed !important;
+    bottom: 98px !important;
+    right: 28px !important;
+    background: white;
+    border-radius: 16px 16px 0 16px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 24px rgba(47,72,165,0.18);
+    border: 1px solid rgba(47,72,165,0.12);
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    animation: popupIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    pointer-events: none;
+    z-index: 99998;
+  }
+
+  .aiko-popup::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 16px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+  }
+
+  .aiko-popup-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2F48A5;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .aiko-popup-msg {
+    font-size: 13px;
+    color: #374151;
+  }
+
+  @keyframes popupIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.9); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .aiko-popup.hidden {
+    animation: popupOut 0.3s ease forwards;
+  }
+
+  @keyframes popupOut {
+    to { opacity: 0; transform: translateY(6px) scale(0.95); pointer-events: none; }
+  }
+
+  body.light-mode .aiko-popup {
+    background: white;
+    border-color: rgba(47,72,165,0.15);
+  }
+
+  @media (max-width: 480px) {
+    .aiko-popup { font-size: 12px; padding: 10px 14px; bottom: 84px; right: 12px; }
+  }
+
+
+  /* ══ NEURAL NETWORK BACKGROUND ══ */
+  #neuralCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    transition: opacity 0.5s ease;
+  }
+
+  body.light-mode #neuralCanvas {
+    opacity: 0.12;
+  }
+
+  /* Make sure all sections sit above canvas */
+  nav, section, footer, .chat-widget, .aiko-popup {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  /* ══ NEURAL NETWORK BACKGROUND ══ */
+  #neuralCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.45;
+    transition: opacity 0.5s ease;
+  }
+
+  body.light-mode #neuralCanvas {
+    opacity: 0.12;
+  }
+
+  .lang-bar,
+  section,
+  .diagnostic-section,
+  .contact-section,
+  footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .chat-widget,
+  .aiko-popup {
+    z-index: 99999 !important;
+  }
+
+
+  /* ══ HAMBURGER MOBILE NAV ══ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 99px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 80px 24px 40px;
+    animation: menuIn 0.3s ease;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  @keyframes menuIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .mobile-menu a {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a:active {
+    background: var(--card);
+    color: var(--cyan);
+  }
+
+  .mobile-menu .mobile-cta {
+    margin-top: 16px;
+    background: var(--cyan);
+    color: #fff !important;
+    font-size: 16px;
+    padding: 16px 32px;
+    width: auto;
+  }
+
+  body.light-mode .mobile-menu .mobile-cta { color: #fff !important; }
+
+  .mobile-menu-bottom {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none !important; }
+  }
+
+
+  /* Normalize stat number rendering */
+  .stat-number * {
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+  }
+
+</style>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "OfHPAxSswAAA9cadb",
+      });
+    })();
+  </script>
+</head>
+<body class="light-mode">
+<canvas id="neuralCanvas"></canvas>
+<canvas id="neuralCanvas"></canvas>
+
+<!-- LANG BAR -->
+<nav class="lang-bar">
+  <a href="#" class="nav-brand">Nint<span>AI</span></a>
+
+  <div class="nav-links">
+    <a href="#journey" class="nav-link" data-lang="fr">Programme</a>
+    <a href="#journey" class="nav-link" data-lang="en">Curriculum</a>
+    <a href="#formats" class="nav-link" data-lang="fr">Formats</a>
+    <a href="#formats" class="nav-link" data-lang="en">Formats</a>
+    <a href="#geekjunior" class="nav-link" style="color: #f59e0b;" data-lang="fr">Geek Junior 🧑‍💻</a>
+    <a href="#geekjunior" class="nav-link" style="color: #f59e0b;" data-lang="en">Geek Junior 🧑‍💻</a>
+    <a href="#tools" class="nav-link" data-lang="fr">Outils</a>
+    <a href="#tools" class="nav-link" data-lang="en">Tools</a>
+    <a href="#diagnostic" class="nav-link" data-lang="fr" style="color:#00e5ff;">Diagnostic</a>
+    <a href="#diagnostic" class="nav-link" data-lang="en" style="color:#00e5ff;">Assessment</a>
+    <a href="#contact" class="nav-link" data-lang="fr">Contact</a>
+    <a href="#contact" class="nav-link" data-lang="en">Contact</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">
+      <span data-lang="fr">Demander un devis</span>
+      <span data-lang="en">Get a quote</span>
+    </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-switch="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-switch="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Changer le thème">🌙</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#journey" onclick="closeMobileMenu()" data-lang="fr">Programme</a>
+  <a href="#journey" onclick="closeMobileMenu()" data-lang="en">Curriculum</a>
+  <a href="#formats" onclick="closeMobileMenu()" data-lang="fr">Formats</a>
+  <a href="#formats" onclick="closeMobileMenu()" data-lang="en">Formats</a>
+  <a href="#geekjunior" onclick="closeMobileMenu()" style="color:#3B82F6;" data-lang="fr">Geek Junior 🧑‍💻</a>
+  <a href="#geekjunior" onclick="closeMobileMenu()" style="color:#3B82F6;" data-lang="en">Geek Junior 🧑‍💻</a>
+  <a href="#tools" onclick="closeMobileMenu()" data-lang="fr">Outils</a>
+  <a href="#tools" onclick="closeMobileMenu()" data-lang="en">Tools</a>
+  <a href="#diagnostic" onclick="closeMobileMenu()" style="color:var(--cyan);" data-lang="fr">Diagnostic</a>
+  <a href="#diagnostic" onclick="closeMobileMenu()" style="color:var(--cyan);" data-lang="en">Assessment</a>
+  <a href="#contact" onclick="closeMobileMenu()" class="mobile-cta" data-lang="fr">Demander un devis</a>
+  <a href="#contact" onclick="closeMobileMenu()" class="mobile-cta" data-lang="en">Get a quote</a>
+  <div class="mobile-menu-bottom">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-switch="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-switch="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" style="width:36px;height:36px;">🌙</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="orb-pink"></div>
+  <div class="orb-violet"></div>
+
+  <div class="hero-badge">
+    <span data-lang="fr">Formation Live · Présentielle</span>
+    <span data-lang="en">Live Training · In-Person</span>
+  </div>
+
+  <h1>
+    <span data-lang="fr">
+      Maîtriser<br>
+      <span class="line-accent">l'IA Générative</span>
+    </span>
+    <span data-lang="en">
+      Master<br>
+      <span class="line-accent">Generative AI</span>
+    </span>
+  </h1>
+
+  <p class="hero-sub">
+    <span data-lang="fr">Des fondamentaux à la pratique — 22+ outils, 100% personnalisé, zéro jargon inutile.</span>
+    <span data-lang="en">From fundamentals to hands-on mastery — 22+ tools, 4 weeks, no fluff.</span>
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">
+      <span data-lang="fr">Demander un devis</span>
+      <span data-lang="en">Request a quote</span>
+      ↗
+    </a>
+    <a href="#journey" class="btn-ghost">
+      <span data-lang="fr">Voir le programme</span>
+      <span data-lang="en">View the curriculum</span>
+    </a>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">22+</div>
+      <div class="stat-label" data-lang="fr">Outils IA</div>
+      <div class="stat-label" data-lang="en">AI Tools</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" style="font-size:22px; line-height:1.2;">Sur<br>mesure</div>
+      <div class="stat-label" data-lang="fr">Durée</div>
+      <div class="stat-label" data-lang="en">Duration</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-label" data-lang="fr">Pratique</div>
+      <div class="stat-label" data-lang="en">Hands-on</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">0</div>
+      <div class="stat-label" data-lang="fr">Prérequis tech</div>
+      <div class="stat-label" data-lang="en">Tech prerequisites</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOR WHO
+══════════════════════════════════════ -->
+<section class="forwho reveal">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Pour qui ?</div>
+    <div class="section-label" data-lang="en">Who is this for?</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">Vous n'avez pas besoin d'être<br>développeur.</span>
+      <span data-lang="en">You don't need to be<br>a developer.</span>
+    </h2>
+    <p class="section-desc">
+      <span data-lang="fr">Cette formation a été conçue pour les professionnels qui veulent exploiter l'IA sans se noyer dans la technique.</span>
+      <span data-lang="en">Built for professionals who want to leverage AI — without drowning in technical complexity.</span>
+    </p>
+
+    <div class="profiles-grid">
+      <div class="profile-card reveal">
+        <span class="profile-icon">🏢</span>
+        <div class="profile-title" data-lang="fr">PME & Entrepreneurs</div>
+        <div class="profile-title" data-lang="en">SMBs & Entrepreneurs</div>
+        <p class="profile-desc" data-lang="fr">Automatisez vos process, générez du contenu, accélérez vos idées business.</p>
+        <p class="profile-desc" data-lang="en">Automate workflows, generate content, and fast-track your business ideas.</p>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">🎓</span>
+        <div class="profile-title" data-lang="fr">Éducation</div>
+        <div class="profile-title" data-lang="en">Education</div>
+        <p class="profile-desc" data-lang="fr">Créez des ressources pédagogiques, simplifiez des concepts complexes, personnalisez l'apprentissage.</p>
+        <p class="profile-desc" data-lang="en">Build learning resources, simplify complex concepts, and personalize education at scale.</p>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">👥</span>
+        <div class="profile-title" data-lang="fr">RH & Management</div>
+        <div class="profile-title" data-lang="en">HR & Management</div>
+        <p class="profile-desc" data-lang="fr">Optimisez le recrutement, la formation interne, et la communication d'équipe grâce à l'IA.</p>
+        <p class="profile-desc" data-lang="en">Streamline recruiting, internal training, and team communication with AI.</p>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">📊</span>
+        <div class="profile-title" data-lang="fr">Finance & Banque</div>
+        <div class="profile-title" data-lang="en">Finance & Banking</div>
+        <p class="profile-desc" data-lang="fr">Analyse de données, synthèse de rapports, veille automatisée et aide à la décision.</p>
+        <p class="profile-desc" data-lang="en">Data analysis, report synthesis, automated monitoring, and decision support.</p>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">📣</span>
+        <div class="profile-title" data-lang="fr">Marketing & Comm</div>
+        <div class="profile-title" data-lang="en">Marketing & Comms</div>
+        <p class="profile-desc" data-lang="fr">Créez du contenu multiformat, des visuels, des vidéos et des campagnes à grande échelle.</p>
+        <p class="profile-desc" data-lang="en">Create multi-format content, visuals, videos, and campaigns at scale.</p>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">🏛️</span>
+        <div class="profile-title" data-lang="fr">Écoles & Universités</div>
+        <div class="profile-title" data-lang="en">Schools & Universities</div>
+        <p class="profile-desc" data-lang="fr">Étudiants et enseignants — intégrez l'IA dans les cursus, les cours et les méthodes pédagogiques.</p>
+        <p class="profile-desc" data-lang="en">Students and professors — integrate AI into curricula, courses, and teaching methods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     OUTCOMES
+══════════════════════════════════════ -->
+<section class="reveal">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Ce que vous allez maîtriser</div>
+    <div class="section-label" data-lang="en">What you'll master</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">Des compétences concrètes.<br>Pas de la théorie.</span>
+      <span data-lang="en">Real skills.<br>Not just theory.</span>
+    </h2>
+
+    <div class="outcomes-grid">
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Rédiger des prompts efficaces (Zero-shot, Few-shot, Chain-of-thought)</div>
+        <div class="outcome-text" data-lang="en">Write effective prompts — Zero-shot, Few-shot, Chain-of-thought</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Générer des images hyperréalistes et des designs professionnels</div>
+        <div class="outcome-text" data-lang="en">Generate hyperrealistic images and professional designs</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Construire des agents IA autonomes sans écrire une ligne de code</div>
+        <div class="outcome-text" data-lang="en">Build autonomous AI agents without writing a single line of code</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Produire des vidéos, de la musique et des objets 3D avec l'IA</div>
+        <div class="outcome-text" data-lang="en">Produce videos, music, and 3D objects with AI tools</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Transformer une idée en MVP fonctionnel en quelques heures</div>
+        <div class="outcome-text" data-lang="en">Turn an idea into a working MVP in hours, not weeks</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Comprendre les enjeux éthiques et détecter les deepfakes</div>
+        <div class="outcome-text" data-lang="en">Understand ethical stakes and detect deepfakes critically</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Exploiter l'écosystème Google AI (Gemini, NotebookLM, AI Studio)</div>
+        <div class="outcome-text" data-lang="en">Leverage the full Google AI ecosystem — Gemini, NotebookLM, AI Studio</div>
+      </div>
+      <div class="outcome-item reveal">
+        <div class="outcome-dot"></div>
+        <div class="outcome-text" data-lang="fr">Utiliser des LLMs open source puissants et gratuits</div>
+        <div class="outcome-text" data-lang="en">Use powerful open-source LLMs freely and confidently</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     JOURNEY / WEEKS
+══════════════════════════════════════ -->
+<section class="journey reveal" id="journey">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Le parcours</div>
+    <div class="section-label" data-lang="en">The journey</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">Votre rythme.<br>Votre transformation.</span>
+      <span data-lang="en">Your pace.<br>Your transformation.</span>
+    </h2>
+
+    <div class="weeks-grid">
+      <!-- M1 -->
+      <div class="week-card reveal">
+        <div class="week-badge">M1</div>
+        <div class="week-title" data-lang="fr">Introduction & Bases</div>
+        <div class="week-title" data-lang="en">Introduction & Basics</div>
+        <div class="week-subtitle" data-lang="fr">Fondamentaux</div>
+        <div class="week-subtitle" data-lang="en">Fundamentals</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Histoire & évolution de l'IA Générative</li>
+          <li data-lang="en">History & evolution of Generative AI</li>
+          <li data-lang="fr">Comprendre les LLMs</li>
+          <li data-lang="en">Understanding LLMs</li>
+          <li data-lang="fr">Prompt Engineering — les bases</li>
+          <li data-lang="en">Prompt Engineering — the basics</li>
+          <li data-lang="fr">Premiers pas avec l'automatisation</li>
+          <li data-lang="en">First steps with automation</li>
+        </ul>
+      </div>
+      <!-- M2 -->
+      <div class="week-card reveal">
+        <div class="week-badge">M2</div>
+        <div class="week-title" data-lang="fr">Techniques & Médias</div>
+        <div class="week-title" data-lang="en">Techniques & Media</div>
+        <div class="week-subtitle" data-lang="fr">Approfondissement</div>
+        <div class="week-subtitle" data-lang="en">Deep Dive</div>
+        <ul class="week-topics">
+          <li data-lang="fr">CoT, Few-shot, Zero-shot avancé</li>
+          <li data-lang="en">CoT, Few-shot, advanced Zero-shot</li>
+          <li data-lang="fr">Génération d'images (Flux, DeepSeek)</li>
+          <li data-lang="en">Image generation (Flux, DeepSeek)</li>
+          <li data-lang="fr">Deepfakes — création & détection</li>
+          <li data-lang="en">Deepfakes — creation & detection</li>
+          <li data-lang="fr">Confiance numérique & sécurité</li>
+          <li data-lang="en">Digital trust & security</li>
+        </ul>
+      </div>
+      <!-- M3 -->
+      <div class="week-card reveal">
+        <div class="week-badge">M3</div>
+        <div class="week-title" data-lang="fr">Création & Agents</div>
+        <div class="week-title" data-lang="en">Creation & Agents</div>
+        <div class="week-subtitle" data-lang="fr">Pratique avancée</div>
+        <div class="week-subtitle" data-lang="en">Advanced practice</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Assistants de recherche (NotebookLM)</li>
+          <li data-lang="en">Research assistants (NotebookLM)</li>
+          <li data-lang="fr">Agents IA autonomes (Lindy.ai)</li>
+          <li data-lang="en">Autonomous AI agents (Lindy.ai)</li>
+          <li data-lang="fr">Apps sans code — idée à MVP</li>
+          <li data-lang="en">No-code apps — idea to MVP</li>
+          <li data-lang="fr">Prototypage rapide d'idées business</li>
+          <li data-lang="en">Rapid business idea prototyping</li>
+        </ul>
+      </div>
+      <!-- M4 -->
+      <div class="week-card reveal">
+        <div class="week-badge">M4</div>
+        <div class="week-title" data-lang="fr">Maîtrise & Futur</div>
+        <div class="week-title" data-lang="en">Mastery & Future</div>
+        <div class="week-subtitle" data-lang="fr">Expertise</div>
+        <div class="week-subtitle" data-lang="en">Expertise</div>
+        <ul class="week-topics">
+          <li data-lang="fr">Écosystème Google AI (Gemini, Canvas)</li>
+          <li data-lang="en">Google AI ecosystem (Gemini, Canvas)</li>
+          <li data-lang="fr">LLMs open source & raisonnement</li>
+          <li data-lang="en">Open-source LLMs & reasoning</li>
+          <li data-lang="fr">Contenu nouvelle génération (vidéo, 3D, audio)</li>
+          <li data-lang="en">Next-gen content (video, 3D, audio)</li>
+          <li data-lang="fr">Éthique & IA responsable</li>
+          <li data-lang="en">Ethics & responsible AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FORMATS
+══════════════════════════════════════ -->
+<section class="reveal" id="formats" style="background: var(--bg);">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Formats disponibles</div>
+    <div class="section-label" data-lang="en">Available formats</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">Un format adapté<br>à chaque contexte.</span>
+      <span data-lang="en">A format tailored<br>to every context.</span>
+    </h2>
+    <p class="section-desc" style="text-align:center; max-width:560px; margin:0 auto 56px;">
+      <span data-lang="fr">Chaque formation est construite autour de vos besoins réels — pas l'inverse. Durée, rythme et contenu adaptés à votre organisation.</span>
+      <span data-lang="en">Every training is built around your real needs — not the other way around. Duration, pace and content adapted to your organization.</span>
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+
+      <!-- Format 1 — Intra-entreprise -->
+      <div class="profile-card reveal" style="border-top: 2px solid var(--cyan); display: flex; flex-direction: column;">
+        <span class="profile-icon">🏢</span>
+        <div class="profile-title" data-lang="fr">Intra-entreprise</div>
+        <div class="profile-title" data-lang="en">In-house corporate</div>
+        <p class="profile-desc" data-lang="fr" style="margin-bottom: 20px; flex: 1;">
+          Formation déployée directement dans votre organisation. Sur vos outils, avec vos données réelles, selon votre planning. Idéal pour former une équipe entière avec un impact immédiat.
+        </p>
+        <p class="profile-desc" data-lang="en" style="margin-bottom: 20px; flex: 1;">
+          Training delivered directly within your organization. Using your tools, your real data, on your schedule. Ideal for upskilling an entire team with immediate impact.
+        </p>
+        <div style="border-top: 1px solid var(--border); padding-top: 14px; font-size: 13px; color: var(--muted);">
+          <div data-lang="fr">✅ Contenu 100% personnalisé</div>
+          <div data-lang="en">✅ 100% personalized content</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Dates et rythme flexibles</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ Flexible dates and pace</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Présentiel ou distanciel</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ In-person or remote</div>
+          <div style="margin-top: 10px; color: var(--cyan); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="fr">👥 Groupes & équipes</div>
+          <div style="margin-top: 10px; color: var(--cyan); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="en">👥 Groups & teams</div>
+        </div>
+      </div>
+
+      <!-- Format 2 — Individuel Premium -->
+      <div class="profile-card reveal" style="border-top: 2px solid var(--violet); display: flex; flex-direction: column;">
+        <span class="profile-icon">🎯</span>
+        <div class="profile-title" data-lang="fr">Individuel Premium</div>
+        <div class="profile-title" data-lang="en">Premium 1:1</div>
+        <p class="profile-desc" data-lang="fr" style="margin-bottom: 20px; flex: 1;">
+          Accompagnement personnalisé en tête-à-tête. Posture consultant, démos live sur vos cas réels, feedback immédiat. Le format le plus rapide pour monter en compétences.
+        </p>
+        <p class="profile-desc" data-lang="en" style="margin-bottom: 20px; flex: 1;">
+          Personalized 1:1 coaching. Consultant approach, live demos on your real cases, immediate feedback. The fastest format to build expertise.
+        </p>
+        <div style="border-top: 1px solid var(--border); padding-top: 14px; font-size: 13px; color: var(--muted);">
+          <div data-lang="fr">✅ Rythme totalement libre</div>
+          <div data-lang="en">✅ Completely flexible pace</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Cas pratiques sur votre réalité</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ Case studies from your reality</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Livrables opérationnels à chaque session</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ Operational deliverables each session</div>
+          <div style="margin-top: 10px; color: var(--violet); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="fr">👤 1 participant</div>
+          <div style="margin-top: 10px; color: var(--violet); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="en">👤 1 participant</div>
+        </div>
+      </div>
+
+      <!-- Format 3 — Établissement -->
+      <div class="profile-card reveal" style="border-top: 2px solid var(--pink); display: flex; flex-direction: column;">
+        <span class="profile-icon">🎓</span>
+        <div class="profile-title" data-lang="fr">Établissement scolaire</div>
+        <div class="profile-title" data-lang="en">Educational institution</div>
+        <p class="profile-desc" data-lang="fr" style="margin-bottom: 20px; flex: 1;">
+          Sessions adaptées aux enseignants, formateurs et étudiants. Format pédagogique ludique et gamifié. Inclut le module Geek Junior pour les 13-16 ans.
+        </p>
+        <p class="profile-desc" data-lang="en" style="margin-bottom: 20px; flex: 1;">
+          Sessions adapted for teachers, trainers and students. Fun and gamified teaching format. Includes the Geek Junior module for ages 13-16.
+        </p>
+        <div style="border-top: 1px solid var(--border); padding-top: 14px; font-size: 13px; color: var(--muted);">
+          <div data-lang="fr">✅ Enseignants & formateurs</div>
+          <div data-lang="en">✅ Teachers & trainers</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Étudiants & lycéens</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ Students & high schoolers</div>
+          <div style="margin-top: 6px;" data-lang="fr">✅ Module Geek Junior 13-16 ans</div>
+          <div style="margin-top: 6px;" data-lang="en">✅ Geek Junior module ages 13-16</div>
+          <div style="margin-top: 10px; color: var(--pink); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="fr">🏫 Collèges, lycées, universités</div>
+          <div style="margin-top: 10px; color: var(--pink); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;" data-lang="en">🏫 Schools, high schools, universities</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#diagnostic" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; padding: 16px 36px;">
+        <span data-lang="fr">Trouver mon format idéal →</span>
+        <span data-lang="en">Find my ideal format →</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TOOLS
+══════════════════════════════════════ -->
+<section class="tools-section reveal" id="tools">
+  <div class="container">
+    <div class="section-label" data-lang="fr">Les outils que vous allez maîtriser</div>
+    <div class="section-label" data-lang="en">Tools you'll master</div>
+    <div class="accent-line"></div>
+
+    <h2 class="section-title">
+      <span data-lang="fr">22+ outils.<br>Tous pratiqués, pas juste cités.</span>
+      <span data-lang="en">22+ tools.<br>All practiced, not just mentioned.</span>
+    </h2>
+
+    <div class="tools-cloud">
+      <div class="tool-chip"><span class="dot"></span>ChatGPT</div>
+      <div class="tool-chip"><span class="dot"></span>Gemini</div>
+      <div class="tool-chip"><span class="dot"></span>Claude AI</div>
+      <div class="tool-chip"><span class="dot"></span>NotebookLM</div>
+      <div class="tool-chip"><span class="dot"></span>Lindy.ai</div>
+      <div class="tool-chip"><span class="dot"></span>Flux / fal.ai</div>
+      <div class="tool-chip"><span class="dot"></span>DeepSeek</div>
+      <div class="tool-chip"><span class="dot"></span>Ideogram</div>
+      <div class="tool-chip"><span class="dot"></span>Kling AI</div>
+      <div class="tool-chip"><span class="dot"></span>Suno AI</div>
+      <div class="tool-chip"><span class="dot"></span>ElevenLabs</div>
+      <div class="tool-chip"><span class="dot"></span>Meshy 3D</div>
+      <div class="tool-chip"><span class="dot"></span>v0.dev</div>
+      <div class="tool-chip"><span class="dot"></span>Napkin AI</div>
+      <div class="tool-chip"><span class="dot"></span>Google AI Studio</div>
+      <div class="tool-chip"><span class="dot"></span>Groq</div>
+      <div class="tool-chip"><span class="dot"></span>DeepSeek</div>
+      <div class="tool-chip"><span class="dot"></span>HuggingChat</div>
+      <div class="tool-chip"><span class="dot"></span>Le Chat (Mistral)</div>
+      <div class="tool-chip"><span class="dot"></span>Hedra</div>
+      <div class="tool-chip"><span class="dot"></span>Stitch by Google</div>
+      <div class="tool-chip"><span class="dot"></span>Obsidian + Copilot</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     HAPPY MEAL
+══════════════════════════════════════ -->
+<section class="reveal" style="background: var(--bg2); padding: 100px 24px;" id="geekjunior">
+  <div class="container">
+
+    <!-- Header -->
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+      <div style="background: linear-gradient(135deg, #3B82F6, #ff2d78); border-radius: 12px; padding: 10px 16px; font-size: 22px; line-height: 1;">🧑‍💻</div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #3B82F6; font-weight: 500; font-family: 'DM Sans', sans-serif; margin-bottom: 4px;">
+          <span data-lang="fr">Nouveau · Module Jeunesse</span>
+          <span data-lang="en">New · Youth Module</span>
+        </div>
+        <h2 style="font-family: 'Syne', sans-serif; font-size: clamp(32px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text);">
+          Geek Junior 🎮
+        </h2>
+      </div>
+    </div>
+
+    <div style="width: 40px; height: 3px; background: linear-gradient(90deg, #3B82F6, #ff2d78); border-radius: 2px; margin-bottom: 20px;"></div>
+
+    <p style="font-family: 'DM Sans', sans-serif; font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 56px;">
+      <span data-lang="fr">L'IA générative expliquée aux ados — de manière ludique, gamifiée et responsable. Conçu pour les 13-16 ans.</span>
+      <span data-lang="en">Generative AI explained to teens — in a fun, gamified and responsible way. Designed for ages 13-16.</span>
+    </p>
+
+    <!-- Main card -->
+    <div style="background: var(--card); border: 1px solid rgba(59,130,246,0.2); border-radius: 28px; overflow: hidden;">
+
+      <!-- Top bar -->
+      <div style="height: 4px; background: linear-gradient(90deg, #3B82F6, #ff2d78, #a855f7, #00e5ff);"></div>
+
+      <div class="hm-grid" style="padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+
+        <!-- Left -->
+        <div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;">
+            <span style="background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: #3B82F6; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; font-family: 'DM Sans', sans-serif;">
+              <span data-lang="fr">🎯 13-16 ans</span>
+              <span data-lang="en">🎯 Ages 13-16</span>
+            </span>
+            <span style="background: rgba(255,45,120,0.1); border: 1px solid rgba(255,45,120,0.3); color: #ff2d78; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; font-family: 'DM Sans', sans-serif;">
+              <span data-lang="fr">⚡ 5 Niveaux</span>
+              <span data-lang="en">⚡ 5 Levels</span>
+            </span>
+            <span style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3); color: #a855f7; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; font-family: 'DM Sans', sans-serif;">
+              <span data-lang="fr">🏆 8 Badges</span>
+              <span data-lang="en">🏆 8 Badges</span>
+            </span>
+            <span style="background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.25); color: #00e5ff; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 100px; font-family: 'DM Sans', sans-serif;">
+              <span data-lang="fr">🕐 3h30</span>
+              <span data-lang="en">🕐 3h30</span>
+            </span>
+          </div>
+
+          <!-- Levels -->
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+
+            <div style="display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;">
+              <div style="width: 32px; height: 32px; background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #a855f7; font-family: 'Syne', sans-serif; flex-shrink: 0;">1</div>
+              <div>
+                <div style="font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px;">
+                  <span data-lang="fr">C'est quoi l'IA ?</span>
+                  <span data-lang="en">What is AI?</span>
+                </div>
+                <div style="font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+                  <span data-lang="fr">Histoire, détection, types d'IA · +150 XP</span>
+                  <span data-lang="en">History, detection, AI types · +150 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;">
+              <div style="width: 32px; height: 32px; background: rgba(0,229,255,0.12); border: 1px solid rgba(0,229,255,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #00e5ff; font-family: 'Syne', sans-serif; flex-shrink: 0;">2</div>
+              <div>
+                <div style="font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px;">
+                  <span data-lang="fr">Le Prompt, ton arme secrète</span>
+                  <span data-lang="en">The Prompt, your secret weapon</span>
+                </div>
+                <div style="font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+                  <span data-lang="fr">Formule magique + Tournoi des prompts · +200 XP</span>
+                  <span data-lang="en">Magic formula + Prompt tournament · +200 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;">
+              <div style="width: 32px; height: 32px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #10b981; font-family: 'Syne', sans-serif; flex-shrink: 0;">3</div>
+              <div>
+                <div style="font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px;">
+                  <span data-lang="fr">L'IA dans ta vie scolaire</span>
+                  <span data-lang="en">AI in your school life</span>
+                </div>
+                <div style="font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+                  <span data-lang="fr">10 usages concrets + Tuteur IA perso · +200 XP</span>
+                  <span data-lang="en">10 real uses + Personal AI tutor · +200 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;">
+              <div style="width: 32px; height: 32px; background: rgba(255,45,120,0.12); border: 1px solid rgba(255,45,120,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #ff2d78; font-family: 'Syne', sans-serif; flex-shrink: 0;">4</div>
+              <div>
+                <div style="font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px;">
+                  <span data-lang="fr">L'IA Éthique — Ton super-pouvoir a des règles</span>
+                  <span data-lang="en">Ethical AI — Your superpower has rules</span>
+                </div>
+                <div style="font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+                  <span data-lang="fr">Deepfakes, 5 lois, futur 2035 · +200 XP</span>
+                  <span data-lang="en">Deepfakes, 5 laws, future 2035 · +200 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(255,45,120,0.08)); border: 1px solid rgba(59,130,246,0.25); border-radius: 12px; padding: 14px 16px;">
+              <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #3B82F6, #ff2d78); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0;">🏆</div>
+              <div>
+                <div style="font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: #3B82F6; margin-bottom: 2px;">
+                  <span data-lang="fr">BOSS FINAL — Le Grand Défi Créatif</span>
+                  <span data-lang="en">FINAL BOSS — The Big Creative Challenge</span>
+                </div>
+                <div style="font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+                  <span data-lang="fr">Musique, image, app ou fiche de révision IA · +250 XP</span>
+                  <span data-lang="en">Music, image, app or AI study sheet · +250 XP</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+
+          <!-- XP counter -->
+          <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(59,130,246,0.2); border-radius: 20px; padding: 28px; text-align: center;">
+            <div style="font-family: 'Syne', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #3B82F6; margin-bottom: 8px;">XP Total disponible</div>
+            <div style="font-family: 'Syne', sans-serif; font-size: 52px; font-weight: 800; background: linear-gradient(135deg, #3B82F6, #ff2d78); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1;">1000</div>
+            <div style="font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; margin-top: 4px;">
+              <span data-lang="fr">8 badges à débloquer</span>
+              <span data-lang="en">8 badges to unlock</span>
+            </div>
+          </div>
+
+          <!-- What they learn -->
+          <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 24px;">
+            <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 16px;">
+              <span data-lang="fr">Ce que les ados maîtrisent</span>
+              <span data-lang="en">What teens will master</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; gap: 10px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; align-items: flex-start;">
+                <span style="color: #10b981; flex-shrink: 0;">✓</span>
+                <span data-lang="fr">Écrire des prompts de niveau expert</span>
+                <span data-lang="en">Write expert-level prompts</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; align-items: flex-start;">
+                <span style="color: #10b981; flex-shrink: 0;">✓</span>
+                <span data-lang="fr">Utiliser l'IA pour les révisions et la créativité</span>
+                <span data-lang="en">Use AI for studying and creativity</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; align-items: flex-start;">
+                <span style="color: #10b981; flex-shrink: 0;">✓</span>
+                <span data-lang="fr">Reconnaître et détecter les deepfakes</span>
+                <span data-lang="en">Recognize and detect deepfakes</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; align-items: flex-start;">
+                <span style="color: #10b981; flex-shrink: 0;">✓</span>
+                <span data-lang="fr">Créer musique, images et apps avec l'IA</span>
+                <span data-lang="en">Create music, images and apps with AI</span>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 13px; color: var(--muted); font-family: 'DM Sans', sans-serif; align-items: flex-start;">
+                <span style="color: #10b981; flex-shrink: 0;">✓</span>
+                <span data-lang="fr">Utiliser l'IA de manière éthique et responsable</span>
+                <span data-lang="en">Use AI ethically and responsibly</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <a href="#contact" class="btn-primary" style="justify-content: center; background: linear-gradient(135deg, #3B82F6, #ff2d78); font-size: 15px; padding: 16px 32px;">
+            <span data-lang="fr">Organiser une session Geek Junior ↗</span>
+            <span data-lang="en">Organize a Geek Junior session ↗</span>
+          </a>
+
+          <p style="text-align: center; font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif;">
+            <span data-lang="fr">Pour collèges, lycées, centres culturels & associations</span>
+            <span data-lang="en">For middle schools, high schools, cultural centers & associations</span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FREE MODULE
+══════════════════════════════════════ -->
+<section class="free-module reveal">
+  <div class="container">
+    <div class="free-card">
+      <div>
+        <div class="free-label">
+          🎁
+          <span data-lang="fr">Module offert</span>
+          <span data-lang="en">Free module</span>
+        </div>
+        <h2 class="free-title">
+          <span data-lang="fr">Découvrez avant de vous engager.</span>
+          <span data-lang="en">Experience it before committing.</span>
+        </h2>
+        <p class="free-desc">
+          <span data-lang="fr">Le module d'introduction est offert. Vous repartez avec vos premiers prompts, votre premier outil maîtrisé — et une idée claire de ce que la formation peut faire pour vous.</span>
+          <span data-lang="en">The introductory module is free. You'll leave with your first prompts, your first mastered tool — and a clear sense of what this training can do for you.</span>
+        </p>
+      </div>
+      <a href="#contact" class="btn-primary" style="white-space: nowrap; flex-shrink: 0;">
+        <span data-lang="fr">Je veux le module gratuit</span>
+        <span data-lang="en">Get the free module</span>
+        →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+
+<!-- ═══════════════ DIAGNOSTIC SECTION ═══════════════ -->
+<section class="diagnostic-section reveal" id="diagnostic">
+  <div class="quiz-wrapper">
+    <div style="text-align:center; margin-bottom: 48px;">
+      <div class="section-label" data-lang="fr">Diagnostic Gratuit</div>
+      <div class="section-label" data-lang="en">Free Assessment</div>
+      <div class="accent-line" style="margin: 0 auto 24px;"></div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,42px); margin-bottom:12px;">
+        <span data-lang="fr">Trouvez votre formation <span class="line-accent">idéale</span></span>
+        <span data-lang="en">Find your <span class="line-accent">ideal</span> training</span>
+      </h2>
+      <p class="section-desc" data-lang="fr">Répondez à quelques questions — recevez une recommandation personnalisée en moins de 3 minutes.</p>
+      <p class="section-desc" data-lang="en">Answer a few questions — get a personalized recommendation in under 3 minutes.</p>
+    </div>
+
+    <div class="quiz-card">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgress" style="width:20%"></div>
+      </div>
+
+      <!-- ÉTAPE 1 — TYPE -->
+      <div class="quiz-step active" id="step1">
+        <div class="quiz-step-label" data-lang="fr">Étape 1 sur 5</div>
+        <div class="quiz-step-label" data-lang="en">Step 1 of 5</div>
+        <div class="quiz-step-title" data-lang="fr">Vous êtes... ?</div>
+        <div class="quiz-step-title" data-lang="en">You are... ?</div>
+        <div class="quiz-step-desc" data-lang="fr">Sélectionnez votre profil pour personnaliser les questions suivantes.</div>
+        <div class="quiz-step-desc" data-lang="en">Select your profile to personalize the following questions.</div>
+        <div class="quiz-type-grid" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="quiz-type-card" onclick="selectType('organisation')" id="typeOrg">
+            <div class="quiz-type-icon">🏢</div>
+            <div class="quiz-type-name" data-lang="fr">Organisation</div>
+            <div class="quiz-type-name" data-lang="en">Organization</div>
+            <div class="quiz-type-sub" data-lang="fr">Entreprise, PME, startup, administration</div>
+            <div class="quiz-type-sub" data-lang="en">Company, SME, startup, administration</div>
+          </div>
+          <div class="quiz-type-card" onclick="selectType('etablissement')" id="typeEtab">
+            <div class="quiz-type-icon">🎓</div>
+            <div class="quiz-type-name" data-lang="fr">Établissement</div>
+            <div class="quiz-type-name" data-lang="en">Institution</div>
+            <div class="quiz-type-sub" data-lang="fr">École, lycée, université, centre de formation</div>
+            <div class="quiz-type-sub" data-lang="en">School, high school, university, training center</div>
+          </div>
+          <div class="quiz-type-card" onclick="selectType('individuel')" id="typeInd">
+            <div class="quiz-type-icon">👤</div>
+            <div class="quiz-type-name" data-lang="fr">Individuel</div>
+            <div class="quiz-type-name" data-lang="en">Individual</div>
+            <div class="quiz-type-sub" data-lang="fr">Professionnel, passionné, entrepreneur</div>
+            <div class="quiz-type-sub" data-lang="en">Professional, enthusiast, entrepreneur</div>
+          </div>
+        </div>
+        <div class="quiz-nav">
+          <span class="quiz-step-counter" data-lang="fr">1 / 5</span>
+          <span class="quiz-step-counter" data-lang="en">1 / 5</span>
+          <button class="quiz-btn-next" onclick="goStep(2)" id="btnStep1" disabled>
+            <span data-lang="fr">Continuer →</span>
+            <span data-lang="en">Continue →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 2 — PROFIL -->
+      <div class="quiz-step" id="step2">
+        <div class="quiz-step-label" data-lang="fr">Étape 2 sur 5</div>
+        <div class="quiz-step-label" data-lang="en">Step 2 of 5</div>
+        <div class="quiz-step-title" id="step2Title">
+          <span data-lang="fr">Votre profil</span>
+          <span data-lang="en">Your profile</span>
+        </div>
+        <div class="quiz-step-desc" data-lang="fr">Ces informations nous permettent d'adapter la formation à votre réalité.</div>
+        <div class="quiz-step-desc" data-lang="en">This information helps us tailor the training to your reality.</div>
+
+        <!-- Organisation -->
+        <div id="orgFields" style="display:none">
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Nom de l'organisation *</span>
+              <span data-lang="en">Organization name *</span>
+            </label>
+            <input class="quiz-input" type="text" id="orgName"
+              data-placeholder-fr="Ex : OCP, CIH Bank, ONCF..."
+              data-placeholder-en="E.g.: OCP, CIH Bank, ONCF..."
+              placeholder="Ex : OCP, CIH Bank, ONCF...">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Secteur d'activité *</span>
+              <span data-lang="en">Industry sector *</span>
+            </label>
+            <select class="quiz-select" id="orgSecteur">
+              <option value="" data-fr="Sélectionnez votre secteur" data-en="Select your sector">Sélectionnez votre secteur</option>
+              <option value="Industrie & Mining" data-fr="⛏️ Industrie & Mining" data-en="⛏️ Industry & Mining">⛏️ Industrie & Mining</option>
+              <option value="Banque & Finance" data-fr="🏦 Banque & Finance" data-en="🏦 Banking & Finance">🏦 Banque & Finance</option>
+              <option value="Commerce & Distribution" data-fr="🛍️ Commerce & Distribution" data-en="🛍️ Commerce & Distribution">🛍️ Commerce & Distribution</option>
+              <option value="Immobilier & Construction" data-fr="🏗️ Immobilier & Construction" data-en="🏗️ Real Estate & Construction">🏗️ Immobilier & Construction</option>
+              <option value="Télécommunications & Tech" data-fr="📡 Télécommunications & Tech" data-en="📡 Telecommunications & Tech">📡 Télécommunications & Tech</option>
+              <option value="Santé & Pharmaceutique" data-fr="🏥 Santé & Pharmaceutique" data-en="🏥 Healthcare & Pharma">🏥 Santé & Pharmaceutique</option>
+              <option value="Agro-alimentaire" data-fr="🌾 Agro-alimentaire" data-en="🌾 Food & Agriculture">🌾 Agro-alimentaire</option>
+              <option value="Tourisme & Hôtellerie" data-fr="🏨 Tourisme & Hôtellerie" data-en="🏨 Tourism & Hospitality">🏨 Tourisme & Hôtellerie</option>
+              <option value="Transport & Logistique" data-fr="🚛 Transport & Logistique" data-en="🚛 Transport & Logistics">🚛 Transport & Logistique</option>
+              <option value="Administration publique" data-fr="🏛️ Administration publique" data-en="🏛️ Public Administration">🏛️ Administration publique</option>
+              <option value="Organisations internationales" data-fr="🌍 Organisations internationales" data-en="🌍 International Organizations">🌍 Organisations internationales</option>
+              <option value="Consulting & Services" data-fr="💼 Consulting & Services" data-en="💼 Consulting & Services">💼 Consulting & Services</option>
+              <option value="Autre" data-fr="Autre" data-en="Other">Autre / Other</option>
+            </select>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Taille de l'organisation *</span>
+              <span data-lang="en">Organization size *</span>
+            </label>
+            <select class="quiz-select" id="orgTaille">
+              <option value="" data-fr="Nombre de collaborateurs" data-en="Number of employees">Nombre de collaborateurs</option>
+              <option value="Moins de 10" data-fr="Moins de 10 (TPE)" data-en="Less than 10 (micro)">Moins de 10 (TPE)</option>
+              <option value="10 à 50" data-fr="10 à 50 (PME)" data-en="10 to 50 (SME)">10 à 50 (PME)</option>
+              <option value="50 à 200" data-fr="50 à 200 (PME)" data-en="50 to 200 (SME)">50 à 200 (PME)</option>
+              <option value="200 à 1000" data-fr="200 à 1000 (ETI)" data-en="200 to 1000 (mid-size)">200 à 1000 (ETI)</option>
+              <option value="Plus de 1000" data-fr="Plus de 1000 (Grand groupe)" data-en="Over 1000 (large group)">Plus de 1000 (Grand groupe)</option>
+            </select>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Votre poste *</span>
+              <span data-lang="en">Your position *</span>
+            </label>
+            <input class="quiz-input" type="text" id="orgPoste"
+              data-placeholder-fr="Ex : DRH, Directeur Formation, PDG..."
+              data-placeholder-en="E.g.: HR Director, Training Manager, CEO..."
+              placeholder="Ex : DRH, Directeur Formation, PDG...">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Ville *</span>
+              <span data-lang="en">City *</span>
+            </label>
+            <select class="quiz-select" id="orgVille">
+              <option value="" data-fr="Sélectionnez votre ville" data-en="Select your city">Sélectionnez votre ville</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Fès">Fès</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Meknès">Meknès</option>
+              <option value="Oujda">Oujda</option>
+              <option value="Autre ville Maroc" data-fr="Autre ville Maroc" data-en="Other city Morocco">Autre ville Maroc</option>
+              <option value="Hors Maroc" data-fr="Hors Maroc" data-en="Outside Morocco">Hors Maroc</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Établissement -->
+        <div id="etabFields" style="display:none">
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Nom de l'établissement *</span>
+              <span data-lang="en">Institution name *</span>
+            </label>
+            <input class="quiz-input" type="text" id="etabName"
+              data-placeholder-fr="Ex : ENCG Casablanca, ISCAE..."
+              data-placeholder-en="E.g.: ENCG Casablanca, ISCAE..."
+              placeholder="Ex : ENCG Casablanca, ISCAE...">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Type d'établissement *</span>
+              <span data-lang="en">Institution type *</span>
+            </label>
+            <select class="quiz-select" id="etabType">
+              <option value="" data-fr="Sélectionnez" data-en="Select">Sélectionnez</option>
+              <option value="Collège" data-fr="Collège" data-en="Middle school">Collège</option>
+              <option value="Lycée" data-fr="Lycée" data-en="High school">Lycée</option>
+              <option value="École supérieure privée" data-fr="École supérieure privée" data-en="Private higher school">École supérieure privée</option>
+              <option value="Grande école publique" data-fr="Grande école publique" data-en="Public engineering school">Grande école publique</option>
+              <option value="Université publique" data-fr="Université publique" data-en="Public university">Université publique</option>
+              <option value="Centre de formation" data-fr="Centre de formation" data-en="Training center">Centre de formation</option>
+              <option value="Autre" data-fr="Autre" data-en="Other">Autre / Other</option>
+            </select>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Qui souhaitez-vous former ? *</span>
+              <span data-lang="en">Who do you want to train? *</span>
+            </label>
+            <div class="quiz-options-grid">
+              <div class="quiz-option multi" onclick="toggleMulti(this,'etabCible','Étudiants')"><span class="quiz-option-dot"></span><span data-lang="fr">👨‍🎓 Étudiants</span><span data-lang="en">👨‍🎓 Students</span></div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'etabCible','Enseignants & Formateurs')"><span class="quiz-option-dot"></span><span data-lang="fr">👨‍🏫 Enseignants & Formateurs</span><span data-lang="en">👨‍🏫 Teachers & Trainers</span></div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'etabCible','Personnel administratif')"><span class="quiz-option-dot"></span><span data-lang="fr">🗂️ Personnel administratif</span><span data-lang="en">🗂️ Administrative staff</span></div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'etabCible','Direction')"><span class="quiz-option-dot"></span><span data-lang="fr">🎯 Direction & Management</span><span data-lang="en">🎯 Management & Leadership</span></div>
+            </div>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Votre fonction *</span>
+              <span data-lang="en">Your role *</span>
+            </label>
+            <input class="quiz-input" type="text" id="etabPoste"
+              data-placeholder-fr="Ex : Directeur pédagogique, Enseignant..."
+              data-placeholder-en="E.g.: Academic director, Teacher..."
+              placeholder="Ex : Directeur pédagogique, Enseignant...">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Ville *</span>
+              <span data-lang="en">City *</span>
+            </label>
+            <select class="quiz-select" id="etabVille">
+              <option value="" data-fr="Sélectionnez votre ville" data-en="Select your city">Sélectionnez votre ville</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Fès">Fès</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Autre ville Maroc" data-fr="Autre ville Maroc" data-en="Other city Morocco">Autre ville Maroc</option>
+              <option value="Hors Maroc" data-fr="Hors Maroc" data-en="Outside Morocco">Hors Maroc</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Individuel -->
+        <div id="indFields" style="display:none">
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Votre métier actuel *</span>
+              <span data-lang="en">Your current job *</span>
+            </label>
+            <input class="quiz-input" type="text" id="indMetier"
+              data-placeholder-fr="Ex : Chargé RH, Manager, Consultant..."
+              data-placeholder-en="E.g.: HR Manager, Consultant, Student..."
+              placeholder="Ex : Chargé RH, Manager, Consultant...">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Secteur *</span>
+              <span data-lang="en">Sector *</span>
+            </label>
+            <select class="quiz-select" id="indSecteur">
+              <option value="" data-fr="Sélectionnez votre secteur" data-en="Select your sector">Sélectionnez votre secteur</option>
+              <option value="Banque & Finance" data-fr="🏦 Banque & Finance" data-en="🏦 Banking & Finance">🏦 Banque & Finance</option>
+              <option value="Industrie & Mining" data-fr="⛏️ Industrie & Mining" data-en="⛏️ Industry & Mining">⛏️ Industrie & Mining</option>
+              <option value="Commerce">🛍️ Commerce</option>
+              <option value="Tech & Digital" data-fr="💻 Tech & Digital" data-en="💻 Tech & Digital">💻 Tech & Digital</option>
+              <option value="Santé" data-fr="🏥 Santé" data-en="🏥 Healthcare">🏥 Santé / Health</option>
+              <option value="Éducation" data-fr="📚 Éducation" data-en="📚 Education">📚 Éducation</option>
+              <option value="Consulting">💼 Consulting</option>
+              <option value="Administration publique" data-fr="🏛️ Administration publique" data-en="🏛️ Public Administration">🏛️ Administration publique</option>
+              <option value="Étudiant" data-fr="🎓 Étudiant" data-en="🎓 Student">🎓 Étudiant / Student</option>
+              <option value="Entrepreneur" data-fr="🚀 Entrepreneur" data-en="🚀 Entrepreneur">🚀 Entrepreneur</option>
+              <option value="Autre" data-fr="Autre" data-en="Other">Autre / Other</option>
+            </select>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Objectif principal *</span>
+              <span data-lang="en">Main objective *</span>
+            </label>
+            <div class="quiz-options-grid" style="grid-template-columns:1fr;">
+              <div class="quiz-option" onclick="selectOption(this,'indObjectif','Gagner en productivité')"><span class="quiz-option-dot"></span><span data-lang="fr">⚡ Gagner en productivité dans mon poste actuel</span><span data-lang="en">⚡ Boost my productivity in my current role</span></div>
+              <div class="quiz-option" onclick="selectOption(this,'indObjectif','Évoluer vers un nouveau rôle')"><span class="quiz-option-dot"></span><span data-lang="fr">📈 Évoluer vers un nouveau rôle</span><span data-lang="en">📈 Move into a new role</span></div>
+              <div class="quiz-option" onclick="selectOption(this,'indObjectif','Me reconvertir vers IA')"><span class="quiz-option-dot"></span><span data-lang="fr">🔄 Me reconvertir vers un métier IA / digital</span><span data-lang="en">🔄 Transition into an AI / digital career</span></div>
+              <div class="quiz-option" onclick="selectOption(this,'indObjectif','Lancer mon projet')"><span class="quiz-option-dot"></span><span data-lang="fr">🚀 Lancer mon propre projet ou activité</span><span data-lang="en">🚀 Launch my own project or business</span></div>
+              <div class="quiz-option" onclick="selectOption(this,'indObjectif','Curiosité et veille')"><span class="quiz-option-dot"></span><span data-lang="fr">🔍 Curiosité et veille professionnelle</span><span data-lang="en">🔍 Curiosity and professional awareness</span></div>
+            </div>
+            <input type="hidden" id="indObjectif">
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Ville *</span>
+              <span data-lang="en">City *</span>
+            </label>
+            <select class="quiz-select" id="indVille">
+              <option value="" data-fr="Sélectionnez votre ville" data-en="Select your city">Sélectionnez votre ville</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Fès">Fès</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Autre ville Maroc" data-fr="Autre ville Maroc" data-en="Other city Morocco">Autre ville Maroc</option>
+              <option value="Hors Maroc" data-fr="Hors Maroc" data-en="Outside Morocco">Hors Maroc</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" onclick="goStep(1)">
+            <span data-lang="fr">← Retour</span>
+            <span data-lang="en">← Back</span>
+          </button>
+          <span class="quiz-step-counter">2 / 5</span>
+          <button class="quiz-btn-next" onclick="validateStep2()">
+            <span data-lang="fr">Continuer →</span>
+            <span data-lang="en">Continue →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3 — RAPPORT À L'IA -->
+      <div class="quiz-step" id="step3">
+        <div class="quiz-step-label" data-lang="fr">Étape 3 sur 5</div>
+        <div class="quiz-step-label" data-lang="en">Step 3 of 5</div>
+        <div class="quiz-step-title" data-lang="fr">Votre rapport à l'IA</div>
+        <div class="quiz-step-title" data-lang="en">Your relationship with AI</div>
+        <div class="quiz-step-desc" data-lang="fr">Dites-nous où vous en êtes pour adapter le niveau de la formation.</div>
+        <div class="quiz-step-desc" data-lang="en">Tell us where you stand so we can adapt the training level.</div>
+
+        <div class="quiz-field">
+          <label class="quiz-label">
+            <span data-lang="fr">Avez-vous déjà utilisé un outil IA ? *</span>
+            <span data-lang="en">Have you already used an AI tool? *</span>
+          </label>
+          <div class="quiz-options-grid" style="grid-template-columns:1fr 1fr 1fr;">
+            <div class="quiz-option" onclick="selectOption(this,'iaUsed','Jamais'); toggleIaTools(false)"><span class="quiz-option-dot"></span><span data-lang="fr">🌱 Jamais</span><span data-lang="en">🌱 Never</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'iaUsed','Occasionnellement'); toggleIaTools(true)"><span class="quiz-option-dot"></span><span data-lang="fr">⚡ Parfois</span><span data-lang="en">⚡ Sometimes</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'iaUsed','Régulièrement'); toggleIaTools(true)"><span class="quiz-option-dot"></span><span data-lang="fr">🚀 Régulièrement</span><span data-lang="en">🚀 Regularly</span></div>
+          </div>
+          <input type="hidden" id="iaUsed">
+        </div>
+
+        <div id="iaToolsField" style="display:none">
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Quels outils utilisez-vous ?</span>
+              <span data-lang="en">Which tools do you use?</span>
+            </label>
+            <div class="quiz-options-grid">
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','ChatGPT')"><span class="quiz-option-dot"></span>ChatGPT</div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','Gemini')"><span class="quiz-option-dot"></span>Gemini</div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','Claude')"><span class="quiz-option-dot"></span>Claude</div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','Copilot')"><span class="quiz-option-dot"></span>Copilot</div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','DeepSeek')"><span class="quiz-option-dot"></span>DeepSeek</div>
+              <div class="quiz-option multi" onclick="toggleMulti(this,'iaTool','Autre')"><span class="quiz-option-dot"></span><span data-lang="fr">Autre</span><span data-lang="en">Other</span></div>
+            </div>
+          </div>
+          <div class="quiz-field">
+            <label class="quiz-label">
+              <span data-lang="fr">Depuis combien de temps ?</span>
+              <span data-lang="en">For how long?</span>
+            </label>
+            <select class="quiz-select" id="iaDuration">
+              <option value="" data-fr="Sélectionnez" data-en="Select">Sélectionnez</option>
+              <option value="Moins de 3 mois" data-fr="Moins de 3 mois" data-en="Less than 3 months">Moins de 3 mois</option>
+              <option value="3 à 6 mois" data-fr="3 à 6 mois" data-en="3 to 6 months">3 à 6 mois</option>
+              <option value="6 mois à 1 an" data-fr="6 mois à 1 an" data-en="6 months to 1 year">6 mois à 1 an</option>
+              <option value="Plus d'un an" data-fr="Plus d'un an" data-en="Over a year">Plus d'un an</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quiz-field">
+          <label class="quiz-label">
+            <span data-lang="fr">Votre niveau actuel avec l'IA *</span>
+            <span data-lang="en">Your current AI level *</span>
+          </label>
+          <div class="quiz-options-grid" style="grid-template-columns:1fr 1fr 1fr;">
+            <div class="quiz-option" onclick="selectOption(this,'iaLevel','Débutant')"><span class="quiz-option-dot"></span><span data-lang="fr">🌱 Débutant</span><span data-lang="en">🌱 Beginner</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'iaLevel','Intermédiaire')"><span class="quiz-option-dot"></span><span data-lang="fr">⚡ Intermédiaire</span><span data-lang="en">⚡ Intermediate</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'iaLevel','Avancé')"><span class="quiz-option-dot"></span><span data-lang="fr">🚀 Avancé</span><span data-lang="en">🚀 Advanced</span></div>
+          </div>
+          <input type="hidden" id="iaLevel">
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" onclick="goStep(2)"><span data-lang="fr">← Retour</span><span data-lang="en">← Back</span></button>
+          <span class="quiz-step-counter">3 / 5</span>
+          <button class="quiz-btn-next" onclick="validateStep3()"><span data-lang="fr">Continuer →</span><span data-lang="en">Continue →</span></button>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 4 — BESOINS -->
+      <div class="quiz-step" id="step4">
+        <div class="quiz-step-label" data-lang="fr">Étape 4 sur 5</div>
+        <div class="quiz-step-label" data-lang="en">Step 4 of 5</div>
+        <div class="quiz-step-title" data-lang="fr">Vos besoins concrets</div>
+        <div class="quiz-step-title" data-lang="en">Your concrete needs</div>
+        <div class="quiz-step-desc" data-lang="fr">Sélectionnez un ou plusieurs défis — on adapte la formation à vos priorités.</div>
+        <div class="quiz-step-desc" data-lang="en">Select one or more challenges — we tailor the training to your priorities.</div>
+
+        <div class="quiz-field">
+          <label class="quiz-label">
+            <span data-lang="fr">Vos défis principaux * <span style="color:#8892a4; font-weight:400; font-size:11px;">(choix multiple)</span></span>
+            <span data-lang="en">Your main challenges * <span style="color:#8892a4; font-weight:400; font-size:11px;">(multiple choice)</span></span>
+          </label>
+          <div class="quiz-options-grid" style="grid-template-columns:1fr;">
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Recrutement & sélection')"><span class="quiz-option-dot"></span><span data-lang="fr">🎯 Recrutement & sélection</span><span data-lang="en">🎯 Recruitment & selection</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Gestion des talents')"><span class="quiz-option-dot"></span><span data-lang="fr">📊 Gestion des talents & performance</span><span data-lang="en">📊 Talent management & performance</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Formation & développement')"><span class="quiz-option-dot"></span><span data-lang="fr">📚 Formation & développement des compétences</span><span data-lang="en">📚 Training & skills development</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Communication interne')"><span class="quiz-option-dot"></span><span data-lang="fr">💬 Communication interne & engagement</span><span data-lang="en">💬 Internal communication & engagement</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Automatisation')"><span class="quiz-option-dot"></span><span data-lang="fr">⚙️ Automatisation des tâches répétitives</span><span data-lang="en">⚙️ Automating repetitive tasks</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','IA dans les cours')"><span class="quiz-option-dot"></span><span data-lang="fr">🎓 Intégration de l'IA dans les cours</span><span data-lang="en">🎓 Integrating AI into teaching</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Création de contenu')"><span class="quiz-option-dot"></span><span data-lang="fr">✨ Création de contenu & marketing</span><span data-lang="en">✨ Content creation & marketing</span></div>
+            <div class="quiz-option multi" onclick="toggleMulti(this,'defi','Gain de temps')"><span class="quiz-option-dot"></span><span data-lang="fr">⏱️ Gain de temps global</span><span data-lang="en">⏱️ Overall time saving</span></div>
+          </div>
+        </div>
+
+        <div class="quiz-field" id="orgOnlyFields">
+          <label class="quiz-label">
+            <span data-lang="fr">Nombre de personnes à former</span>
+            <span data-lang="en">Number of people to train</span>
+          </label>
+          <select class="quiz-select" id="nbPersonnes">
+            <option value="" data-fr="Sélectionnez" data-en="Select">Sélectionnez</option>
+            <option value="1 personne" data-fr="1 personne" data-en="1 person">1 personne</option>
+            <option value="2 à 5 personnes" data-fr="2 à 5 personnes" data-en="2 to 5 people">2 à 5 personnes</option>
+            <option value="5 à 20 personnes" data-fr="5 à 20 personnes" data-en="5 to 20 people">5 à 20 personnes</option>
+            <option value="20 à 100 personnes" data-fr="20 à 100 personnes" data-en="20 to 100 people">20 à 100 personnes</option>
+            <option value="Plus de 100 personnes" data-fr="Plus de 100 personnes" data-en="Over 100 people">Plus de 100 personnes</option>
+          </select>
+        </div>
+
+        <div class="quiz-field">
+          <label class="quiz-label">
+            <span data-lang="fr">Format préféré *</span>
+            <span data-lang="en">Preferred format *</span>
+          </label>
+          <div class="quiz-options-grid">
+            <div class="quiz-option" onclick="selectOption(this,'format','Présentiel')"><span class="quiz-option-dot"></span><span data-lang="fr">🏢 Présentiel</span><span data-lang="en">🏢 In-person</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'format','Distanciel')"><span class="quiz-option-dot"></span><span data-lang="fr">💻 Distanciel</span><span data-lang="en">💻 Remote</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'format','Hybride')"><span class="quiz-option-dot"></span><span data-lang="fr">🔄 Hybride</span><span data-lang="en">🔄 Hybrid</span></div>
+            <div class="quiz-option" onclick="selectOption(this,'format','Peu importe')"><span class="quiz-option-dot"></span><span data-lang="fr">✅ Peu importe</span><span data-lang="en">✅ No preference</span></div>
+          </div>
+          <input type="hidden" id="format">
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" onclick="goStep(3)"><span data-lang="fr">← Retour</span><span data-lang="en">← Back</span></button>
+          <span class="quiz-step-counter">4 / 5</span>
+          <button class="quiz-btn-next" onclick="validateStep4()"><span data-lang="fr">Continuer →</span><span data-lang="en">Continue →</span></button>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 5 — CONTACT -->
+      <div class="quiz-step" id="step5">
+        <div class="quiz-step-label" data-lang="fr">Étape 5 sur 5 — Dernière étape !</div>
+        <div class="quiz-step-label" data-lang="en">Step 5 of 5 — Last step!</div>
+        <div class="quiz-step-title" data-lang="fr">Vos coordonnées</div>
+        <div class="quiz-step-title" data-lang="en">Your contact details</div>
+        <div class="quiz-step-desc" data-lang="fr">Pour recevoir votre recommandation personnalisée sous 24h.</div>
+        <div class="quiz-step-desc" data-lang="en">To receive your personalized recommendation within 24h.</div>
+
+        <div class="quiz-field">
+          <label class="quiz-label"><span data-lang="fr">Prénom & Nom *</span><span data-lang="en">Full name *</span></label>
+          <input class="quiz-input" type="text" id="contactNom" data-placeholder-fr="Votre nom complet" data-placeholder-en="Your full name" placeholder="Votre nom complet">
+        </div>
+        <div class="quiz-field">
+          <label class="quiz-label"><span data-lang="fr">Email professionnel *</span><span data-lang="en">Professional email *</span></label>
+          <input class="quiz-input" type="email" id="contactEmail" data-placeholder-fr="vous@entreprise.ma" data-placeholder-en="you@company.com" placeholder="vous@entreprise.ma">
+        </div>
+        <div class="quiz-field">
+          <label class="quiz-label"><span data-lang="fr">Téléphone / WhatsApp</span><span data-lang="en">Phone / WhatsApp</span></label>
+          <input class="quiz-input" type="tel" id="contactTel" placeholder="+212 6...">
+        </div>
+        <div class="quiz-field">
+          <label class="quiz-label"><span data-lang="fr">Un mot sur votre situation (optionnel)</span><span data-lang="en">A word about your situation (optional)</span></label>
+          <textarea class="quiz-textarea" id="contactMessage" data-placeholder-fr="Décrivez brièvement votre contexte..." data-placeholder-en="Briefly describe your context..." placeholder="Décrivez brièvement votre contexte..."></textarea>
+        </div>
+
+        <div class="quiz-nav">
+          <button class="quiz-btn-prev" onclick="goStep(4)"><span data-lang="fr">← Retour</span><span data-lang="en">← Back</span></button>
+          <span class="quiz-step-counter">5 / 5</span>
+          <button class="quiz-btn-next" onclick="submitQuiz()" id="btnSubmit">
+            <span data-lang="fr">Envoyer ma demande 🚀</span>
+            <span data-lang="en">Send my request 🚀</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- LOADING -->
+      <div class="quiz-step" id="stepLoading">
+        <div class="quiz-loading">
+          <div class="quiz-spinner"></div>
+          <span data-lang="fr">Analyse de votre profil en cours...</span>
+          <span data-lang="en">Analyzing your profile...</span>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="quiz-step" id="stepSuccess">
+        <div class="quiz-success">
+          <span class="quiz-success-icon">✅</span>
+          <div class="quiz-success-title" data-lang="fr">Votre diagnostic a été envoyé !</div>
+          <div class="quiz-success-title" data-lang="en">Your assessment has been sent!</div>
+          <div class="quiz-success-desc" data-lang="fr">Merci <strong id="successName"></strong>. Amine a bien reçu votre profil et vous contactera dans les 24 heures.</div>
+          <div class="quiz-success-desc" data-lang="en">Thank you <strong id="successName"></strong>. Amine has received your profile and will contact you within 24 hours.</div>
+          <div class="quiz-success-actions">
+            <a href="https://wa.me/212698841448?text=Bonjour%20Amine%2C%20je%20viens%20de%20remplir%20le%20diagnostic%20NintAI." class="quiz-wa-btn" target="_blank">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Amine
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end quiz-card -->
+  </div><!-- end quiz-wrapper -->
+</section>
+
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div class="section-label" data-lang="fr">Contact</div>
+      <div class="section-label" data-lang="en">Contact</div>
+      <div class="accent-line" style="margin: 0 auto 24px;"></div>
+      <h2 class="section-title">
+        <span data-lang="fr">Parlons de votre <span class="line-accent">projet</span></span>
+        <span data-lang="en">Let's talk about your <span class="line-accent">project</span></span>
+      </h2>
+      <p class="section-desc" style="text-align:center; max-width:500px; margin:0 auto;" data-lang="fr">Réponse garantie sous 24h — choisissez le canal qui vous convient.</p>
+      <p class="section-desc" style="text-align:center; max-width:500px; margin:0 auto;" data-lang="en">Guaranteed reply within 24h — choose the channel that suits you.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/212698841448?text=Bonjour%20Amine%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20NintAI%20Training." target="_blank" rel="noopener"
+        style="display:flex; flex-direction:column; align-items:center; gap:14px; padding:32px 24px; background:var(--card); border:1px solid var(--border); border-radius:20px; text-decoration:none; transition:all 0.25s ease; cursor:pointer;"
+        onmouseover="this.style.borderColor='#25D366'; this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.borderColor=''; this.style.transform=''">
+        <div style="width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px;">💬</div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; color:var(--text); font-size:15px; margin-bottom:6px;">WhatsApp</div>
+          <div style="color:#25D366; font-size:14px; font-weight:600;">+212 698 841 448</div>
+          <div style="color:var(--muted); font-size:12px; margin-top:4px;" data-lang="fr">Réponse rapide</div>
+          <div style="color:var(--muted); font-size:12px; margin-top:4px;" data-lang="en">Quick reply</div>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:mohamedsbaih@gmail.com"
+        style="display:flex; flex-direction:column; align-items:center; gap:14px; padding:32px 24px; background:var(--card); border:1px solid var(--border); border-radius:20px; text-decoration:none; transition:all 0.25s ease; cursor:pointer;"
+        onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.borderColor=''; this.style.transform=''">
+        <div style="width:56px; height:56px; background:linear-gradient(135deg,#2F48A5,#a855f7); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px;">📧</div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; color:var(--text); font-size:15px; margin-bottom:6px;">Email</div>
+          <div style="color:var(--cyan); font-size:13px; font-weight:600;">mohamedsbaih@gmail.com</div>
+          <div style="color:var(--muted); font-size:12px; margin-top:4px;" data-lang="fr">Sous 24h</div>
+          <div style="color:var(--muted); font-size:12px; margin-top:4px;" data-lang="en">Within 24h</div>
+        </div>
+      </a>
+
+      <!-- Diagnostic -->
+      <a href="#diagnostic"
+        style="display:flex; flex-direction:column; align-items:center; gap:14px; padding:32px 24px; background:linear-gradient(135deg,rgba(47,72,165,0.08),rgba(168,85,247,0.08)); border:1px solid rgba(47,72,165,0.2); border-radius:20px; text-decoration:none; transition:all 0.25s ease; cursor:pointer;"
+        onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-4px)'"
+        onmouseout="this.style.borderColor='rgba(47,72,165,0.2)'; this.style.transform=''">
+        <div style="width:56px; height:56px; background:linear-gradient(135deg,#2F48A5,#e8562a); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px;">🎯</div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; color:var(--text); font-size:15px; margin-bottom:6px;" data-lang="fr">Diagnostic gratuit</div>
+          <div style="font-weight:700; color:var(--text); font-size:15px; margin-bottom:6px;" data-lang="en">Free assessment</div>
+          <div style="color:var(--cyan); font-size:13px; font-weight:600;" data-lang="fr">3 minutes · Recommandation personnalisée</div>
+          <div style="color:var(--cyan); font-size:13px; font-weight:600;" data-lang="en">3 minutes · Personalized recommendation</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-brand">Maîtriser l'IA Générative</div>
+  <div style="color: var(--muted); font-size: 13px;">
+    <span data-lang="fr">Formation live · Présentielle · Tous niveaux</span>
+    <span data-lang="en">Live training · In-person · All levels</span>
+  </div>
+  <div>© 2025</div>
+</footer>
+
+<script>
+  // Language toggle
+  
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  const isOpen = menu.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('themeBtn');
+  const isLight = body.classList.toggle('light-mode');
+  btn.textContent = isLight ? '☀️' : '🌙';
+  btn.title = isLight ? 'Passer en mode sombre' : 'Passer en mode clair';
+  localStorage.setItem('nintai-theme', isLight ? 'light' : 'dark');
+}
+
+// Restore saved theme on load
+(function() {
+  const saved = localStorage.getItem('nintai-theme');
+  if(saved === 'dark') {
+    document.body.classList.remove('light-mode');
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('themeBtn');
+    if(!btn) return;
+    const isLight = document.body.classList.contains('light-mode');
+    btn.textContent = isLight ? '☀️' : '🌙';
+    btn.title = isLight ? 'Passer en mode sombre' : 'Passer en mode clair';
+  });
+})();
+
+function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.switch === lang); });
+    var isEN = lang === 'en';
+
+    var aikoPopup = document.getElementById('aikoPopup');
+    if(aikoPopup) {
+      aikoPopup.querySelector('.aiko-popup-msg').textContent = isEN ? 'Hello! Any questions? 👋' : 'Bonjour ! Une question ? 👋';
+    }
+
+    var aikoWelcome = document.getElementById('aikoWelcome');
+    if(aikoWelcome) {
+      aikoWelcome.innerHTML = isEN
+        ? 'Hello! I am <strong>AIKO</strong>, your NintAI Training assistant 🤖<br><br>How can I help you today?'
+        : 'Bonjour ! Je suis <strong>AIKO</strong>, votre assistante NintAI Training 🤖<br><br>Comment puis-je vous aider ?';
+    }
+
+    var suggs = document.getElementById('chatSuggestions');
+    if(suggs) {
+      if(isEN) {
+        suggs.innerHTML = '<button class="chat-sugg" onclick="sendSugg(&quot;What training do you offer?&quot;)">Training</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;How much does it cost?&quot;)">Pricing</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;What is Geek Junior?&quot;)">Geek Junior</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;How to contact you?&quot;)">Contact</button>';
+      } else {
+        suggs.innerHTML = '<button class="chat-sugg" onclick="sendSugg(&quot;Quelles formations proposez-vous ?&quot;)">Formations</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;Combien ca coute ?&quot;)">Tarifs</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;Geek junior ?&quot;)">Geek Junior</button>'
+          + '<button class="chat-sugg" onclick="sendSugg(&quot;Comment vous contacter ?&quot;)">Contact</button>';
+      }
+    }
+
+    var status = document.querySelector('.chat-header-status');
+    if(status) {
+      status.textContent = isEN ? 'Online — instant replies' : 'En ligne — répond instantanément';
+    }
+    // Update quiz placeholders
+    document.querySelectorAll('[data-placeholder-fr]').forEach(function(el) {
+      el.placeholder = isEN ? el.getAttribute('data-placeholder-en') : el.getAttribute('data-placeholder-fr');
+    });
+    // Update select options with data-fr/data-en
+    document.querySelectorAll('select option[data-fr]').forEach(function(opt) {
+      opt.textContent = isEN ? opt.getAttribute('data-en') : opt.getAttribute('data-fr');
+    });
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit — Formspree
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.style.opacity = '0.5';
+    btn.style.pointerEvents = 'none';
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.opacity = '0.3';
+        form.style.pointerEvents = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+        alert('Une erreur est survenue. Réessayez.');
+      }
+    } catch {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      alert('Erreur réseau. Vérifiez votre connexion.');
+    }
+  }
+</script>
+
+<script>
+// ═══════════════ QUIZ LOGIC v2 ═══════════════
+
+function quizAlert(msgFr, msgEn) {
+  var isEN = document.body.classList.contains('lang-en');
+  alert(isEN ? msgEn : msgFr);
+}
+
+let quizData = {
+  type:'',
+  orgName:'',orgSecteur:'',orgTaille:'',orgPoste:'',orgVille:'',
+  etabName:'',etabType:'',etabPoste:'',etabVille:'',
+  indMetier:'',indSecteur:'',indObjectif:'',indVille:'',
+  iaUsed:'',iaLevel:'',iaDuration:'',
+  nom:'',email:'',tel:'',message:''
+};
+let selectedMulti = {};
+
+function selectType(type) {
+  quizData.type = type;
+  ['typeOrg','typeEtab','typeInd'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.classList.remove('selected');
+  });
+  const map = {organisation:'typeOrg',etablissement:'typeEtab',individuel:'typeInd'};
+  if(document.getElementById(map[type])) document.getElementById(map[type]).classList.add('selected');
+  document.getElementById('btnStep1').disabled = false;
+  document.getElementById('orgFields').style.display = type==='organisation'?'block':'none';
+  document.getElementById('etabFields').style.display = type==='etablissement'?'block':'none';
+  document.getElementById('indFields').style.display = type==='individuel'?'block':'none';
+  document.getElementById('orgOnlyFields').style.display = type!=='individuel'?'block':'none';
+  const titles = {organisation:'Votre organisation',etablissement:'Votre établissement',individuel:'Votre profil'};
+  document.getElementById('step2Title').textContent = titles[type];
+}
+
+function selectOption(el, field, value) {
+  el.parentElement.querySelectorAll('.quiz-option:not(.multi)').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  const inp = document.getElementById(field);
+  if(inp) inp.value = value;
+  quizData[field] = value;
+}
+
+function toggleMulti(el, field, value) {
+  if(!selectedMulti[field]) selectedMulti[field] = [];
+  if(el.classList.contains('selected')) {
+    el.classList.remove('selected');
+    selectedMulti[field] = selectedMulti[field].filter(v => v !== value);
+  } else {
+    el.classList.add('selected');
+    selectedMulti[field].push(value);
+  }
+}
+
+function toggleIaTools(show) {
+  const el = document.getElementById('iaToolsField');
+  if(el) el.style.display = show ? 'block' : 'none';
+}
+
+function goStep(n) {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  document.getElementById('quizProgress').style.width = (n/5*100) + '%';
+  document.querySelector('.quiz-card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function validateStep2() {
+  if(quizData.type === 'organisation') {
+    const n=document.getElementById('orgName').value.trim();
+    const s=document.getElementById('orgSecteur').value;
+    const t=document.getElementById('orgTaille').value;
+    const p=document.getElementById('orgPoste').value.trim();
+    const v=document.getElementById('orgVille').value;
+    if(!n||!s||!t||!p||!v){quizAlert('Merci de remplir tous les champs obligatoires.', 'Please fill in all required fields.');return;}
+    Object.assign(quizData,{orgName:n,orgSecteur:s,orgTaille:t,orgPoste:p,orgVille:v});
+  } else if(quizData.type === 'etablissement') {
+    const n=document.getElementById('etabName').value.trim();
+    const t=document.getElementById('etabType').value;
+    const p=document.getElementById('etabPoste').value.trim();
+    const v=document.getElementById('etabVille').value;
+    if(!n||!t||!p||!v){quizAlert('Merci de remplir tous les champs obligatoires.', 'Please fill in all required fields.');return;}
+    if(!selectedMulti['etabCible']||selectedMulti['etabCible'].length===0){quizAlert('Merci de sélectionner qui vous souhaitez former.', 'Please select who you want to train.');return;}
+    Object.assign(quizData,{etabName:n,etabType:t,etabPoste:p,etabVille:v});
+  } else {
+    const m=document.getElementById('indMetier').value.trim();
+    const s=document.getElementById('indSecteur').value;
+    const o=document.getElementById('indObjectif').value;
+    const v=document.getElementById('indVille').value;
+    if(!m||!s||!o||!v){quizAlert('Merci de remplir tous les champs obligatoires.', 'Please fill in all required fields.');return;}
+    Object.assign(quizData,{indMetier:m,indSecteur:s,indObjectif:o,indVille:v});
+  }
+  goStep(3);
+}
+
+function validateStep3() {
+  if(!document.getElementById('iaUsed').value||!document.getElementById('iaLevel').value){
+    quizAlert('Merci de répondre à toutes les questions.', 'Please answer all questions.');return;
+  }
+  quizData.iaUsed = document.getElementById('iaUsed').value;
+  quizData.iaLevel = document.getElementById('iaLevel').value;
+  quizData.iaDuration = document.getElementById('iaDuration').value||'';
+  goStep(4);
+}
+
+function validateStep4() {
+  const defis = selectedMulti['defi']||[];
+  const fmt = document.getElementById('format').value;
+  if(defis.length===0||!fmt){quizAlert('Merci de sélectionner au moins un défi et un format.', 'Please select at least one challenge and a format.');return;}
+  quizData.format = fmt;
+  quizData.nbPersonnes = document.getElementById('nbPersonnes')?.value||'';
+  goStep(5);
+}
+
+function submitQuiz() {
+  const nom = document.getElementById('contactNom').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  if(!nom||!email){quizAlert('Prénom, nom et email sont obligatoires.', 'Full name and email are required.');return;}
+  Object.assign(quizData,{
+    nom, email,
+    tel: document.getElementById('contactTel').value.trim(),
+    message: document.getElementById('contactMessage').value.trim()
+  });
+
+  document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('stepLoading').classList.add('active');
+
+  const payload = {
+    timestamp: new Date().toLocaleString('fr-FR'),
+    type: quizData.type,
+    nom: quizData.nom,
+    email: quizData.email,
+    tel: quizData.tel||'-',
+    organisation: quizData.orgName||quizData.etabName||'-',
+    secteur: quizData.orgSecteur||quizData.indSecteur||'-',
+    taille: quizData.orgTaille||'-',
+    poste: quizData.orgPoste||quizData.etabPoste||quizData.indMetier||'-',
+    ville: quizData.orgVille||quizData.etabVille||quizData.indVille||'-',
+    etabType: quizData.etabType||'-',
+    etabCible: (selectedMulti['etabCible']||[]).join(', ')||'-',
+    objectif: quizData.indObjectif||'-',
+    iaUsed: quizData.iaUsed,
+    iaTools: (selectedMulti['iaTool']||[]).join(', ')||'-',
+    iaDuration: quizData.iaDuration||'-',
+    iaLevel: quizData.iaLevel,
+    defis: (selectedMulti['defi']||[]).join(', ')||'-',
+    nbPersonnes: quizData.nbPersonnes||'-',
+    format: quizData.format,
+    message: quizData.message||'-'
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbyATWvmU2yH2Z1EzR7Dxk8hXIvuYcZ54iLGFeHcRj2ZsIetL4vhDxgwSq1aVcG0CpSzhw/exec',{
+    method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  }).catch(()=>{});
+
+  // Send via EmailJS — depuis mohamedsbaih@gmail.com
+  const templateParams = {
+    nom: payload.nom,
+    email: payload.email,
+    tel: payload.tel || '-',
+    type: payload.type,
+    organisation: payload.organisation,
+    secteur: payload.secteur,
+    ville: payload.ville || '-',
+    taille: payload.taille || '-',
+    poste: payload.poste || '-',
+    iaUsed: payload.iaUsed,
+    iaTools: payload.iaTools || '-',
+    iaLevel: payload.iaLevel,
+    defis: payload.defis || '-',
+    format: payload.format,
+    nbPersonnes: payload.nbPersonnes || '-',
+    message: payload.message || '-',
+    timestamp: payload.timestamp
+  };
+
+  // Email 1 — Notification à Amine
+  emailjs.send('service_j200wzn', 'template_8gbfvqb', templateParams)
+    .catch(() => {});
+
+  // Email 2 — Confirmation au visiteur
+  emailjs.send('service_j200wzn', 'template_q0mcphk', templateParams)
+    .then(() => showSuccess())
+    .catch(() => showSuccess());
+}
+
+function showSuccess() {
+  document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('stepSuccess').classList.add('active');
+  document.getElementById('successName').textContent = quizData.nom.split(' ')[0];
+  document.getElementById('quizProgress').style.width = '100%';
+}
+</script>
+
+
+<!-- ══ AIKO POPUP ══ -->
+<div class="aiko-popup" id="aikoPopup" style="display:none;">
+  <span class="aiko-popup-name">AIKO</span>
+  <span class="aiko-popup-msg">Bonjour ! Une question ? 👋</span>
+</div>
+
+<!-- ══ CHATBOT NINTAI ══ -->
+<div class="chat-widget">
+
+  <!-- Chat Box -->
+  <div class="chat-box" id="chatBox">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">AIKO — Assistant NintAI</div>
+        <div class="chat-header-status">En ligne — répond instantanément</div>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        <div class="chat-bubble" id="aikoWelcome">Bonjour ! Je suis <strong>AIKO</strong>, votre assistante NintAI Training 🤖<br><br>Comment puis-je vous aider aujourd'hui ?</div>
+        <div class="chat-time">maintenant</div>
+      </div>
+    </div>
+
+    <!-- Suggestions rapides -->
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button class="chat-sugg" onclick="sendSugg('Quelles formations proposez-vous ?')">Formations</button>
+      <button class="chat-sugg" onclick="sendSugg('Combien ça coûte ?')">Tarifs</button>
+      <button class="chat-sugg" onclick="sendSugg('C\'est quoi Geek Junior ?')">Geek Junior</button>
+      <button class="chat-sugg" onclick="sendSugg('Comment vous contacter ?')">Contact</button>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-area">
+      <input class="chat-input" id="chatInput" type="text"
+        placeholder="Posez votre question..."
+        onkeydown="if(event.key==='Enter') sendMessage()">
+      <button class="chat-send" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Toggle Button -->
+  <button class="chat-toggle" id="chatToggle" onclick="toggleChat()" aria-label="Chat NintAI">
+    <span class="chat-notif" id="chatNotif">1</span>
+    <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <svg class="chat-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+
+</div>
+
+
+<script>
+// ══ CHATBOT NINTAI ══
+const chatDB = [
+  {q:["bonjour","salut","hello","bonsoir","coucou","hi"],r:"Bonjour ! Je suis AIKO, votre assistante NintAI Training 🤖 Comment puis-je vous aider ?",re:"Hello! I'm AIKO, your NintAI Training assistant 🤖 How can I help you?"},
+  {q:["qui etes vous","qui êtes vous","nintai","presente toi","presentez vous","c'est quoi"],r:"NintAI Training est un cabinet de formation spécialisé en IA Générative, basé à Casablanca. Fondé par Mohamed Amine SBAIH, formateur certifié en IA.",re:"NintAI Training is a training company specialized in Generative AI, based in Casablanca. Founded by Mohamed Amine SBAIH, certified AI trainer."},
+  {q:["que proposez vous","services","offre","vous faites quoi"],r:"Nous proposons des formations IA sur mesure pour les entreprises, établissements scolaires et professionnels individuels.",re:"We offer tailored AI training for companies, educational institutions and individual professionals."},
+  {q:["quelles formations","vos formations","formations disponibles","catalogue","liste"],r:"3 types de formations — IA pour les RH 🎯, IA pour les équipes corporate 🏢, et Geek Junior pour les 13-16 ans 🎮.",re:"3 types of training — AI for HR 🎯, AI for corporate teams 🏢, and Geek Junior for ages 13-16 🎮."},
+  {q:["quel niveau","debutant","prérequis","prerequis","faut il","sans experience","niveau"],r:"Nos formations sont conçues pour les débutants complets — zéro prérequis technique !",re:"Our training is designed for complete beginners — zero technical prerequisites!"},
+  {q:["duree","durée","combien de temps","heures","jours","longue"],r:"De quelques heures pour une session découverte à plusieurs jours pour un programme complet. Tout est adapté à vos besoins.",re:"From 4 hours for a discovery session to 32 hours for a full program."},
+  {q:["presentiel","présentiel","en ligne","distanciel","virtuel","zoom","hybride","format"],r:"Les deux ! Présentiel à Casablanca, distanciel pour toute la région MENA, et format hybride possible 🌍",re:"Both! In-person in Casablanca, remote for the entire MENA region, and hybrid format available 🌍"},
+  {q:["outils","chatgpt","gemini","claude","deepseek","tools","logiciels"],r:"Plus de 22 outils couverts — ChatGPT, Gemini, Claude, NotebookLM, DeepSeek, Copilot, Lindy et bien d'autres 🛠️",re:"Over 22 tools covered — ChatGPT, Gemini, Claude, NotebookLM, DeepSeek, Copilot, Lindy and many more 🛠️"},
+  {q:["difference","comparer","laquelle choisir","quelle formation"],r:"La formation RH est spécialisée pour les DRH. La corporate s'adapte à tous les métiers. Geek Junior pour les 13-16 ans.",re:"The HR training is specialized for HR managers. Corporate adapts to all roles. Geek Junior for ages 13-16."},
+  {q:["arabe","langue","francais","anglais","bilingue"],r:"Oui ! Nos formations sont disponibles en français, arabe et anglais 🌐",re:"Yes! Our training is available in French, Arabic and English 🌐"},
+  {q:["prompt","prompting","rcmf","engineering"],r:"Le Prompt Engineering c'est l'art de parler à l'IA. On enseigne la formule RCMF — Rôle, Contexte, Mission, Format ✨",re:"Prompt Engineering is the art of talking to AI. We teach the RCMF formula — Role, Context, Mission, Format ✨"},
+  {q:["sur mesure","personnalise","adapte","specifique","customise"],r:"Absolument — c'est notre spécialité ! Chaque formation est adaptée à votre secteur et vos cas d'usage réels.",re:"Absolutely — it's our specialty! Every training is tailored to your sector and real use cases."},
+  {q:["groupe","taille","participants","plusieurs personnes","equipe"],r:"De 1 à 20 participants en présentiel. Pour les grands groupes nous proposons des sessions multiples 👥",re:"From 1 to 20 participants in person. For larger groups we offer multiple sessions 👥"},
+  {q:["programme","contenu","modules","syllabus","plan"],r:"4 modules — Fondamentaux IA, Prompt Engineering, Recrutement augmenté, Gestion des talents. Remplissez le diagnostic pour un programme personnalisé 📋",re:"4 modules — AI Fundamentals, Prompt Engineering, Enhanced Recruitment, Talent Management. Fill in the assessment for a personalized program 📋"},
+  {q:["prix","tarif","combien","cout","budget","mad","dirham"],r:"Les tarifs varient selon le format et la durée. Remplissez notre diagnostic gratuit pour recevoir une proposition sous 24h 💰",re:"Prices vary by format and duration. Fill in our free assessment to receive a proposal within 24h 💰"},
+  {q:["etudiant","reduction","remise","pas cher","moins cher"],r:"Oui ! Tarifs préférentiels pour les étudiants et demandeurs d'emploi. Contactez-nous directement 🎓",re:"Yes! Preferential rates for students and job seekers. Contact us directly 🎓"},
+  {q:["deductible","fiscal","tva","taxe","financement"],r:"Les formations professionnelles au Maroc sont éligibles à la taxe de formation professionnelle 📄",re:"Professional training in Morocco is eligible for the vocational training tax 📄"},
+  {q:["paiement","plusieurs fois","echelonne","mensualite","virement"],r:"Oui ! Paiement en 2 ou 3 fois pour les formations longues 💳",re:"Yes! Payment in 2 or 3 installments for longer programs 💳"},
+  {q:["entreprise","societe","pme","grande entreprise","corporate","intra"],r:"Oui ! PME, grandes entreprises, organisations internationales. Nous adaptons le contenu à votre secteur 🏢",re:"Yes! SMEs, large companies, international organizations. We adapt the content to your sector 🏢"},
+  {q:["secteur","industrie","banque","mines","commerce","sante","administration"],r:"Tous secteurs — banque et finance, industrie, commerce, télécoms, santé, administration publique.",re:"All sectors — banking and finance, industry, commerce, telecoms, healthcare, public administration."},
+  {q:["equipe rh","former equipe","toute equipe","intra entreprise"],r:"Absolument ! Programmes intra-entreprise avec cas pratiques tirés de votre réalité quotidienne 💪",re:"Absolutely! In-house programs with case studies drawn from your daily reality 💪"},
+  {q:["audit","maturite ia","evaluation entreprise"],r:"Oui — audit de maturité IA qui identifie les opportunités prioritaires pour votre organisation 🔍",re:"Yes — AI maturity audit that identifies priority opportunities for your organization 🔍"},
+  {q:["references","clients","partenaires","temoignages"],r:"Nous travaillons avec des organisations au Maroc et en Mauritanie. Contactez-nous pour des références.",re:"We work with organizations in Morocco and Mauritania. Contact us for references."},
+  {q:["geek junior","module jeunesse","ados","adolescents","jeunes"],r:"Geek Junior c'est notre module IA pour les 13-16 ans — ludique, gamifié 🎮 5 niveaux, 8 badges, 1000 XP !",re:"Geek Junior is our AI module for ages 13-16 — fun, gamified 🎮 5 levels, 8 badges, 1000 XP!"},
+  {q:["quel age","age geek","13 ans","14 ans","15 ans","16 ans"],r:"Geek Junior est conçu pour les 13 à 16 ans 🚀",re:"Geek Junior is designed for ages 13 to 16 🚀"},
+  {q:["organiser session","session geek","ecole","lycee","college","intervention"],r:"Contactez-nous via le diagnostic ou WhatsApp. Nous intervenons dans votre établissement. Session de 3h30 📅",re:"Contact us via the assessment or WhatsApp. We come to your institution. Session of 3h30 📅"},
+  {q:["consentement","parents","autorisation","mineur"],r:"Oui — formulaire de consentement parental fourni. Protection des données des mineurs priorité absolue 🛡️",re:"Yes — parental consent form provided. Minor data protection is our absolute priority 🛡️"},
+  {q:["ou","adresse","localisation","casablanca","maroc","ville"],r:"NintAI Training est basé à Casablanca, Maroc. Nous intervenons dans tout le Maroc et en distanciel 📍",re:"NintAI Training is based in Casablanca, Morocco. We operate throughout Morocco and remotely 📍"},
+  {q:["contact","contacter","joindre","appeler","whatsapp","email","telephone"],r:"WhatsApp +212 698 841 448 📱, email mohamedsbaih@gmail.com 📧, ou via le formulaire Diagnostic. Réponse sous 24h !",re:"WhatsApp +212 698 841 448 📱, email mohamedsbaih@gmail.com 📧, or via the Diagnostic form. Reply within 24h!"},
+  {q:["certificat","attestation","diplome","certifiant","reconnaissance"],r:"Oui ! Attestation NintAI Training avec les compétences acquises détaillées à la fin de chaque formation 🏆",re:"Yes! NintAI Training certificate with detailed acquired skills at the end of each training 🏆"},
+  {q:["delai","quand","disponible","demarrer","commencer","planning"],r:"1 à 2 semaines pour intra-entreprise. Formations individuelles démarrables sous 48h ⚡",re:"1 to 2 weeks for in-house training. Individual training can start within 48h ⚡"},
+  {q:["diagnostic","questionnaire","test","evaluation gratuite","trouver formation"],r:"Le diagnostic gratuit est un questionnaire de 5 minutes. Vous recevez une recommandation personnalisée sous 24h 🎯",re:"The free assessment is a 5-minute questionnaire. You receive a personalized recommendation within 24h 🎯"},
+  {q:["inscrire","inscription","reserver","commande","sinscrire"],r:"Parfait ! Remplissez le diagnostic gratuit dans le menu, ou contactez Amine sur WhatsApp +212 698 841 448 🚀",re:"Perfect! Fill in the free assessment in the menu, or contact Amine on WhatsApp +212 698 841 448 🚀"},
+  {q:["au revoir","bye","merci","a bientot","adieu","ciao"],r:"Merci pour votre visite ! N'hésitez pas à remplir notre diagnostic ou nous contacter. À bientôt 👋",re:"Thank you for visiting! Feel free to fill in our assessment or contact us. Goodbye 👋"},
+];
+
+const defaultReply = "Je n'ai pas bien compris 😅 Essayez d'autres mots, ou contactez Amine sur WhatsApp +212 698 841 448 !";
+
+let chatOpen = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const box = document.getElementById('chatBox');
+  const toggle = document.getElementById('chatToggle');
+  const notif = document.getElementById('chatNotif');
+  const popup = document.getElementById('aikoPopup');
+  box.classList.toggle('open', chatOpen);
+  toggle.classList.toggle('open', chatOpen);
+  if(chatOpen && notif) notif.style.display = 'none';
+  if(chatOpen && popup) popup.style.display = 'none';
+  if(chatOpen) setTimeout(() => document.getElementById('chatInput').focus(), 100);
+}
+
+function getTime() {
+  return new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+}
+
+function addMsg(text, type) {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + type;
+  div.innerHTML = '<div class="chat-bubble">' + text + '</div><div class="chat-time">' + getTime() + '</div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  div.id = 'typingIndicator';
+  div.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typingIndicator');
+  if(t) t.remove();
+}
+
+function normalize(str) {
+  return str.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/['']/g,"'")
+    .replace(/[^a-z0-9\s']/g,' ')
+    .trim();
+}
+
+function findReply(input) {
+  const txt = normalize(input);
+  const isEN = document.documentElement.lang === 'en' || 
+    document.querySelector('.lang-btn.active[data-switch="en"]') !== null;
+  for(const item of chatDB) {
+    for(const kw of item.q) {
+      if(txt.includes(normalize(kw))) return isEN && item.re ? item.re : item.r;
+    }
+  }
+  return isEN ? "I didn't quite understand 😅 Try rephrasing, or contact Amine on WhatsApp +212 698 841 448!" : defaultReply;
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  addMsg(text, 'user');
+  document.getElementById('chatSuggestions').style.display = 'none';
+  showTyping();
+  setTimeout(() => {
+    removeTyping();
+    addMsg(findReply(text), 'bot');
+  }, 600 + Math.random() * 500);
+}
+
+function sendSugg(text) {
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+
+// Show popup after 3 seconds
+setTimeout(() => {
+  if(!chatOpen) {
+    const popup = document.getElementById('aikoPopup');
+    if(popup) popup.style.display = 'flex';
+  }
+}, 3000);
+
+// Hide popup after 9 seconds
+setTimeout(() => {
+  if(!chatOpen) {
+    const popup = document.getElementById('aikoPopup');
+    if(popup) popup.style.display = 'none';
+    const notif = document.getElementById('chatNotif');
+    if(notif) notif.style.display = 'flex';
+  }
+}, 9000);
+</script>
+
+<script>
+// ══ NEURAL NETWORK BACKGROUND ══
+(function() {
+  const canvas = document.getElementById('neuralCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let W, H, nodes = [], animId;
+  const NODE_COUNT = 70;
+  const MAX_DIST = 160;
+  const SPEED = 0.4;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function isLight() {
+    return document.body.classList.contains('light-mode');
+  }
+
+  function getColors() {
+    if(isLight()) {
+      return { node: '47,72,165', line: '47,72,165' };
+    }
+    return { node: '0,229,255', line: '0,229,255' };
+  }
+
+  function createNodes() {
+    nodes = [];
+    for(let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * SPEED,
+        vy: (Math.random() - 0.5) * SPEED,
+        r: Math.random() * 2 + 1.5,
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.02 + Math.random() * 0.02
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const { node: nc, line: lc } = getColors();
+
+    // Draw connections
+    for(let i = 0; i < nodes.length; i++) {
+      for(let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < MAX_DIST) {
+          const alpha = (1 - dist/MAX_DIST) * 0.5;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(${lc},${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+
+          // Draw signal dot traveling along line
+          if(Math.random() < 0.001) {
+            const t = Math.random();
+            const sx = nodes[i].x + (nodes[j].x - nodes[i].x) * t;
+            const sy = nodes[i].y + (nodes[j].y - nodes[i].y) * t;
+            ctx.beginPath();
+            ctx.arc(sx, sy, 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${nc},0.9)`;
+            ctx.fill();
+          }
+        }
+      }
+    }
+
+    // Draw nodes
+    for(let n of nodes) {
+      n.pulse += n.pulseSpeed;
+      const pulseFactor = 1 + Math.sin(n.pulse) * 0.3;
+      const r = n.r * pulseFactor;
+
+      // Glow
+      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 4);
+      grad.addColorStop(0, `rgba(${nc},0.4)`);
+      grad.addColorStop(1, `rgba(${nc},0)`);
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r * 4, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Core dot
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${nc},0.85)`;
+      ctx.fill();
+
+      // Move
+      n.x += n.vx;
+      n.y += n.vy;
+
+      // Bounce off edges
+      if(n.x < 0 || n.x > W) n.vx *= -1;
+      if(n.y < 0 || n.y > H) n.vy *= -1;
+    }
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  function init() {
+    resize();
+    createNodes();
+    if(animId) cancelAnimationFrame(animId);
+    draw();
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    createNodes();
+  });
+
+  // Start after page load
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Pause when tab hidden (performance)
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) {
+      cancelAnimationFrame(animId);
+    } else {
+      draw();
+    }
+  });
+})();
+</script>
+
+
+<script>
+// ══ NEURAL NETWORK BACKGROUND ══
+(function() {
+  const canvas = document.getElementById('neuralCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let W, H, nodes = [], animFrame;
+  const NODE_COUNT = 70;
+  const MAX_DIST = 160;
+  const NODE_SPEED = 0.4;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initNodes() {
+    nodes = [];
+    for(let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * NODE_SPEED,
+        vy: (Math.random() - 0.5) * NODE_SPEED,
+        r: Math.random() * 2 + 1.5,
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function getColors() {
+    const isLight = document.body.classList.contains('light-mode');
+    return {
+      node: isLight ? '47, 72, 165' : '0, 229, 255',
+      line: isLight ? '47, 72, 165' : '0, 229, 255',
+      glow: isLight ? '168, 85, 247' : '168, 85, 247'
+    };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const colors = getColors();
+
+    // Update nodes
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      n.pulse += 0.03;
+      if(n.x < 0 || n.x > W) n.vx *= -1;
+      if(n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    // Draw connections
+    for(let i = 0; i < nodes.length; i++) {
+      for(let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < MAX_DIST) {
+          const alpha = (1 - dist / MAX_DIST) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(${colors.line}, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    nodes.forEach((n, idx) => {
+      const pulse = 0.6 + Math.sin(n.pulse) * 0.4;
+      const isSpecial = idx % 12 === 0;
+
+      if(isSpecial) {
+        // Glowing special nodes
+        const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 4);
+        grad.addColorStop(0, `rgba(${colors.glow}, ${0.6 * pulse})`);
+        grad.addColorStop(1, `rgba(${colors.glow}, 0)`);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r * 4, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${isSpecial ? colors.glow : colors.node}, ${0.8 * pulse})`;
+      ctx.fill();
+    });
+
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  function init() {
+    resize();
+    initNodes();
+    draw();
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    initNodes();
+  });
+
+  // Start after page loads
+  if(document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
